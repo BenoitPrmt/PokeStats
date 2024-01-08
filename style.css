@@ -36,7 +36,7 @@ header {
   border-radius: 12px;
 }
 
-#generations, #pokemons {
+#generations, #pokemons, #pokemon {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
