@@ -60,10 +60,17 @@ hr {
 }
 
 #generations,
-#pokemons,
-#pokemon {
+#pokemons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px auto;
+}
+
+#pokemon {
+  display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -93,9 +100,17 @@ hr {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 10px auto;
 }
 
 /* POKEMON PAGE */
+
+#section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
 
 #poke-image {
   width: 300px;
@@ -109,7 +124,7 @@ hr {
 
 #poke-types {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .type {
@@ -121,8 +136,8 @@ hr {
   border-style: solid;
   border-width: 2px;
 
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
 
 .type-little {

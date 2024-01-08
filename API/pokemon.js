@@ -22,9 +22,26 @@ function showPokemon(poke) {
 
     let pokemonSection = document.getElementById("pokemon");
 
+    // ---- SECTION LEFT ----
+    let sectionLeft = document.createElement("div");
+    sectionLeft.setAttribute("id", "section-left");
+
     let pokemonImage = document.createElement("img");
     pokemonImage.setAttribute("id", "poke-image");
     pokemonImage.setAttribute("src", poke.image);
+
+    sectionLeft.appendChild(pokemonImage);
+    // ---- END SECTION LEFT ----
+
+
+    // ---- SECTION RIGHT ----
+    
+    let sectionRight = document.createElement("div");
+    sectionRight.setAttribute("id", "section-right");
+    
+    // -- SECTION HEADER --
+    let sectionHeader = document.createElement("div");
+    sectionHeader.setAttribute("id", "section-header");
 
     let pokemonTitle = document.createElement("h2");
     pokemonTitle.setAttribute("id", "poke-name");
@@ -48,6 +65,11 @@ function showPokemon(poke) {
         pokemonTypes.appendChild(typeEleLink);
     }
 
+    sectionHeader.appendChild(pokemonTitle);
+    sectionHeader.appendChild(pokemonTypes);
+    // -- END SECTION HEADER --
+
+
     // STATS
     let stats = document.createElement("div");
     stats.setAttribute("id", "stats");
@@ -66,10 +88,12 @@ function showPokemon(poke) {
     stats.appendChild(statsTitle);
     stats.appendChild(statsList);
 
-    pokemonSection.appendChild(pokemonImage)
-    pokemonSection.appendChild(pokemonTitle)
-    pokemonSection.appendChild(pokemonTypes)
-    pokemonSection.appendChild(stats)
+    sectionRight.appendChild(sectionHeader);
+    sectionRight.appendChild(stats);
+    // ---- END SECTION RIGHT ----
+
+    pokemonSection.appendChild(sectionLeft);
+    pokemonSection.appendChild(sectionRight);
 
 }
 
