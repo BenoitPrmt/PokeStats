@@ -50,34 +50,53 @@ function showTypes() {
     }
 }
 
-// fetch("https://pokebuildapi.fr/api/v1/types", {
-//         headers: headers
-//     })
-//         .then((response) => {
-//             return response.json();
-//         })
-//         .then((data) => {
-//             console.log(data);
+// https://pokebuildapi.fr/api/v1/pokemon/type/Eau
 
-//             for (let type of data) {
-//                 let typeEle = document.createElement("a");
-//                 typeEle.setAttribute("href", "?type=" + type.name);
+function fetchPokemons(type) {
+    fetch("https://pokebuildapi.fr/api/v1/pokemon/type/" + type)
+        .then(response => response.json())
+        .then(data => {
+            let pokemons = [];
+            for (let pokemon of data) {
+                pokemons.push({
+                    pokedexId: pokemon.pokedexId,
+                    name: pokemon.name,
+                    sprite: pokemon.sprite,
+                });
+            }
+            localStorage.setItem("type" + type, JSON.stringify(pokemons));
+            showPokemons(type);
+        });
+}
 
-//                 let typeImage = document.createElement("img");
-//                 typeImage.classList.add("type-little");
-//                 typeImage.setAttribute("alt", type.name);
-//                 typeImage.setAttribute("title", type.name);
-//                 typeImage.setAttribute("src", type.image);
+function showPokemons(type) {
+    let pokemonsEle = document.getElementById("pokemons");
 
-//                 // let typeName = document.createElement("h3");
-//                 // typeName.innerHTML = type.name;
+    let pokemonsSession = localStorage.getItem("type" + type);
 
-//                 typeEle.appendChild(typeImage);
-//                 // typeEle.appendChild(typeName);
+    if (pokemonsSession) {
+        pokemonsSession = JSON.parse(pokemonsSession);
 
-//                 typesEle.appendChild(typeEle);
-//             }
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//         })
+        for (let pokemon of pokemonsSession) {
+
+            console.log(pokemon);
+
+            let pokemonEle = document.createElement("a");
+            pokemonEle.classList.add("card");
+            pokemonEle.setAttribute("href", "?pokemon=" + pokemon.pokedexId);
+
+            let pokemonImage = document.createElement("img");
+            pokemonImage.setAttribute("src", pokemon.sprite);
+
+            let pokemonName = document.createElement("h3");
+            pokemonName.innerHTML = pokemon.name;
+
+            pokemonEle.appendChild(pokemonImage);
+            pokemonEle.appendChild(pokemonName);
+
+            pokemonsEle.appendChild(pokemonEle);
+        }
+    } else {
+        fetchPokemons(type);
+    }
+}

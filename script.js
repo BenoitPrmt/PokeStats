@@ -15,13 +15,18 @@ if (window.location.search === "") {
 const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get("pokemon");
 const generationId = urlParams.get("gen");
+const typeId = urlParams.get("type");
 
 if(!generationId) {
-    if (!pokemonId) {
-        showGenerations(8)
-        showTypes()
+    if(!typeId) {
+        if (!pokemonId) {
+            showGenerations(8)
+            showTypes()
+        } else {
+            getPokemon(pokemonId)
+        }
     } else {
-        getPokemon(pokemonId)
+        showPokemons(typeId)
     }
 } else {
     getGeneration(generationId)
