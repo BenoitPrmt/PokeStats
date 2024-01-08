@@ -1,29 +1,51 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: rgb(242, 242, 242);
+  background-color: rgb(242, 242, 242);
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
-#generations {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px
+.button {
+  background-color: #04aa6d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+#generations, #pokemons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .card {
-    background-color: white;
-    padding: 10px 20px;
-    width: fit-content;
+  background-color: white;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 12px;
+}
+
+.card>img {
+    width: 100px;
+    height: 100px;
 }
 
 .card:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.loading-text {
+  font-weight: 900;
 }
