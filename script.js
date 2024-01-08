@@ -47,19 +47,20 @@ function getGeneration(gen) {
             console.log(response);
             pokemonsSection.innerHTML = ""
             response.forEach(poke => {
-                let pokeEle = document.createElement("div");
+                let pokeEle = document.createElement("a");
                 pokeEle.classList.add("card")
-                pokeEle.setAttribute("onclick", "getPokemon(" + poke.pokedexId + ")")
-                // pokeEle.setAttribute("href", window.location.href + "pokemon/" + poke.pokedexId)
+                // pokeEle.setAttribute("onclick", "getPokemon(" + poke.pokedexId + ")")
+                pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId)
 
                 let pokeName = document.createElement("h3");
                 pokeName.innerHTML = poke.name
 
                 let pokeImage = document.createElement("img");
-                pokeImage.setAttribute("src", poke.image)
+                pokeImage.setAttribute("src", poke.sprite)
 
                 pokeEle.appendChild(pokeName)
                 pokeEle.appendChild(pokeImage)
+
                 pokemonsSection.appendChild(pokeEle)
             });
         })
@@ -67,7 +68,6 @@ function getGeneration(gen) {
 }
 
 function getPokemon(poke_id) {
-
     console.log(window.location);
 
     const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon/" + poke_id, {
@@ -80,4 +80,11 @@ function getPokemon(poke_id) {
         .catch((error) => { error });
 }
 
-showGenerations(8)
+const urlParams = new URLSearchParams(window.location.search);
+const pokemonId = urlParams.get("pokemon");
+
+if (!pokemonId) {
+    showGenerations(8)
+} else {
+    getPokemon(pokemonId)
+}
