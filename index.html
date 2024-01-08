@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeStats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1><a href="/">PokeStats</a></h1>
-        <p>Séléectionnez une génération ou un type pour voir les pokémons !</p>
+        <!-- <h1><a href="/">PokeStats</a></h1> -->
+        <a href="/" class="center" id="logo"><img src="assets/pokestats.png" alt="PokeStats"></a>
+        <p class="center">Séléctionnez une génération ou un type pour voir les pokémons !</p>
     </header>
 
-    <div class="container" id="generations"></div>
-    <hr class="container">
-    <div class="container" id="types"></div>
-    <hr class="container">
+    <main>
+        <div class="container">
+            <a class="button" id="return" onclick="window.location.search === '' ? false : window.history.go(-1)"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
 
-    <div class="container" id="pokemons"></div>
-    <div class="container" id="pokemon"></div>
+        <div class="container" id="generations"></div>
+        <hr class="container">
+        <div class="container" id="types"></div>
+        <hr class="container">
 
+        <div class="container" id="pokemons"></div>
+        <div class="container" id="pokemon"></div>
+    </main>
 
     <script src="API/generation.js"></script>
     <script src="API/pokemon.js"></script>

@@ -2,6 +2,14 @@
 //     Accept: "application/json",
 // };
 
+console.log(window.location);
+
+let returnButton = document.getElementById("return");
+if (window.location.search === "") {
+    returnButton.style.display = "none";
+} else {
+    returnButton.style.display = "inline-block";
+}
 
 
 const urlParams = new URLSearchParams(window.location.search);

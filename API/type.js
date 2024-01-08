@@ -17,16 +17,16 @@ function showTypes() {
                 typeEle.setAttribute("href", "?type=" + type.name);
 
                 let typeImage = document.createElement("img");
-                typeImage.classList.add("type");
+                typeImage.classList.add("type-little");
                 typeImage.setAttribute("alt", type.name);
                 typeImage.setAttribute("title", type.name);
                 typeImage.setAttribute("src", type.image);
 
-                let typeName = document.createElement("h3");
-                typeName.innerHTML = type.name;
+                // let typeName = document.createElement("h3");
+                // typeName.innerHTML = type.name;
 
                 typeEle.appendChild(typeImage);
-                typeEle.appendChild(typeName);
+                // typeEle.appendChild(typeName);
 
                 typesEle.appendChild(typeEle);
             }

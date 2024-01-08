@@ -13,7 +13,8 @@ function showGenerations(max) {
         gen.setAttribute("href", "?gen=" + i)
 
         let title = document.createElement("h3");
-        title.innerHTML = "Génération " + i
+        // title.innerHTML = "Génération " + i
+        title.innerHTML = i + "G"
 
         gen.appendChild(title)
         genEle.appendChild(gen)
