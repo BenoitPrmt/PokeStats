@@ -1,22 +1,42 @@
+const headers = {
+    Accept: "application/json",
+};
 
+// const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon", {
+//     method: "GET",
+//     headers: headers,
+// }).then((response) => response.json())
+//     .then((response) => {
+//         console.log(response);
+//     })
+//     .catch((error) => { error });
 
-function apiCall(endpoint) {
-    const headers = {
-        Accept: "application/json",
-    };
+function showGenerations(max) {
+    let genEle = document.getElementById("generations");
 
-    console.log("https://pokebuildapi.fr/api/v1/" + endpoint);
-    
+    for (let i = 1; i < max + 1; i++) {
+        let gen = document.createElement("div");
+        gen.setAttribute("id", i)
+        gen.setAttribute("onclick", "getGeneration(" + i + ")")
 
-    const apiCall = fetch("https://pokebuildapi.fr/api/v1/" + endpoint, {
+        let title = document.createElement("h3");
+        title.innerHTML = "Génération" + i
+
+        gen.appendChild(title)
+        genEle.appendChild(gen)
+    }
+}
+
+function getGeneration(gen) {
+    const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/"+gen, {
         method: "GET",
         headers: headers,
     }).then((response) => response.json())
         .then((response) => {
-            return response
-
+            console.log(response);
         })
-        .catch((error) => { return error });
+        .catch((error) => { error });
+
 }
 
-console.log(apiCall('pokemon'));
+showGenerations(5)
