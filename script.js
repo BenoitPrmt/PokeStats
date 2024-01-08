@@ -17,18 +17,21 @@ const pokemonId = urlParams.get("pokemon");
 const generationId = urlParams.get("gen");
 const typeId = urlParams.get("type");
 
-if(!generationId) {
-    if(!typeId) {
-        if (!pokemonId) {
+console.log(pokemonId, generationId, typeId);
+
+if(generationId === null) {
+    if(typeId === null) {
+        if (pokemonId === null) {
             showGenerations(8)
             showTypes()
         } else {
             getPokemon(pokemonId)
         }
     } else {
-        showPokemons(typeId)
+        showPokemonsByType(typeId)
     }
 } else {
+    console.log(generationId);
     getGeneration(generationId)
 }
 

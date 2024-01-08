@@ -50,9 +50,8 @@ function showTypes() {
     }
 }
 
-// https://pokebuildapi.fr/api/v1/pokemon/type/Eau
-
 function fetchPokemons(type) {
+    console.log(type);
     fetch("https://pokebuildapi.fr/api/v1/pokemon/type/" + type)
         .then(response => response.json())
         .then(data => {
@@ -65,11 +64,11 @@ function fetchPokemons(type) {
                 });
             }
             localStorage.setItem("type" + type, JSON.stringify(pokemons));
-            showPokemons(type);
+            showPokemonsByType(type);
         });
 }
 
-function showPokemons(type) {
+function showPokemonsByType(type) {
     let pokemonsEle = document.getElementById("pokemons");
 
     let pokemonsSession = localStorage.getItem("type" + type);
