@@ -8,14 +8,22 @@
 </head>
 <body>
     <header>
-        <h1><a href="/">Pokémons</a></h1>
+        <h1><a href="/">PokeStats</a></h1>
+        <p>Séléectionnez une génération ou un type pour voir les pokémons !</p>
     </header>
 
     <div class="container" id="generations"></div>
     <hr class="container">
+    <div class="container" id="types"></div>
+    <hr class="container">
+
     <div class="container" id="pokemons"></div>
     <div class="container" id="pokemon"></div>
 
+
+    <script src="API/generation.js"></script>
+    <script src="API/pokemon.js"></script>
+    <script src="API/type.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

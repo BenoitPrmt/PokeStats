@@ -3,12 +3,12 @@
 }
 
 a {
-    text-decoration: none;
-    color: rgb(22, 22, 22)
+  text-decoration: none;
+  color: rgb(22, 22, 22);
 }
 
 a:visited {
-    color: rgb(22, 22, 22)
+  color: rgb(22, 22, 22);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -36,7 +36,9 @@ header {
   border-radius: 12px;
 }
 
-#generations, #pokemons, #pokemon {
+#generations,
+#pokemons,
+#pokemon {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -50,9 +52,9 @@ header {
   border-radius: 12px;
 }
 
-.card>img {
-    width: 100px;
-    height: 100px;
+.card > img {
+  width: 100px;
+  height: 100px;
 }
 
 .card:hover {
@@ -61,4 +63,34 @@ header {
 
 .loading-text {
   font-weight: 900;
+}
+
+/* POKEMON PAGE */
+
+#poke-image {
+  width: 300px;
+  height: 300px;
+}
+
+#poke-name {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#poke-types {
+  display: flex;
+  gap: 10px;
+}
+
+.type {
+  background-color: #ffffff;
+  padding: 5px;
+  
+  border-radius: 100%;
+  border-color: rgb(248, 210, 19);
+  border-style: solid;
+  border-width: 2px;
+
+  width: 50px;
+  height: 50px;
 }
