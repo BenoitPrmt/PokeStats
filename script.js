@@ -17,10 +17,11 @@ function showGenerations(max) {
     for (let i = 1; i < max + 1; i++) {
         let gen = document.createElement("div");
         gen.setAttribute("id", i)
+        gen.classList.add("card")
         gen.setAttribute("onclick", "getGeneration(" + i + ")")
 
         let title = document.createElement("h3");
-        title.innerHTML = "Génération" + i
+        title.innerHTML = "Génération " + i
 
         gen.appendChild(title)
         genEle.appendChild(gen)
@@ -34,9 +35,15 @@ function getGeneration(gen) {
     }).then((response) => response.json())
         .then((response) => {
             console.log(response);
+            let pokemonsSection = document.getElementById("pokemons")
+            pokemonsSection.innerHTML = ""
+            response.forEach(poke => {
+                let pokeEle = document.createElement("p")
+                pokeEle.innerHTML = poke.name
+                pokemonsSection.appendChild(pokeEle)
+            });
         })
         .catch((error) => { error });
-
 }
 
 showGenerations(5)

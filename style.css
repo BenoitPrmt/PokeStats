@@ -1,3 +1,29 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+    background-color: rgb(242, 242, 242);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#generations {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.card {
+    background-color: white;
+    padding: 10px 20px;
+    width: fit-content;
+}
+
+.card:hover {
+    cursor: pointer;
+}
