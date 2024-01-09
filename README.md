@@ -43,7 +43,7 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and Node installed.
 
 ## :checkered_flag: Starting ##
 
@@ -53,6 +53,12 @@ $ git clone https://github.com/BenoitPrmt/PokeStats
 
 # Access
 $ cd PokeStats
+
+# Install dependencies
+$ npm install
+
+# Run the project
+$ npm start
 
 # Run the project in your browser with the live server extension of VSCode
 # The server will initialize in the <http://localhost:3000>
