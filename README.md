@@ -1,4 +1,6 @@
-<img align="center" src="assets/pokestats.png">
+<p align="center">
+  <img align="center" src="assets/pokestats.png">
+</P>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/BenoitPrmt/PokeStats?color=56BEB8">
