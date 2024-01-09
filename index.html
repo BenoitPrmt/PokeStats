@@ -7,12 +7,134 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
+
+<style>
+    *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 18px;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    background: #FFECB3;
+  }
+  
+  h1 {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .15em;
+    margin-bottom: .5em;
+  }
+  
+  .container {
+    width: 80%;
+    display: block;
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+  .pokeball {
+    display: inline-block;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    background: #b71c1c;
+    border-radius: 50%;
+    box-shadow:  inset 0 -72px 0 -37px #fff, inset 0 -76px 0 -35px #000, 0 0 0 5px #000;
+    position: relative;
+    transition: .4s;
+    transform-origin: bottom center;
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+    
+    .pokeball:hover {
+      cursor: pointer;
+      animation: anti-wiggle 1s ease-in-out;
+    }
+    
+    
+    .pokeball:focus, .pokeball:active {
+      outline: 0;
+    }
+  
+
+  .pokeball::before{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    top: 50px;
+    left: 40px;
+    border: 1px solid rgba(0,0,0,.4);
+    box-shadow: 2px 0 0 0 rgba(0,0,0,0.2), 0 0 0 5px #fff, 0 0 0 10px #000;
+}
+  
+  @keyframes wiggle {
+    20% {
+      box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+      transform: rotate(7deg);
+    }
+    
+    40% {
+      box-shadow:  inset -11px 0 5px 0 rgba(0,0,0,.4);
+      transform: rotate(-14deg);
+    }
+    
+    60% {
+      box-shadow:  inset -5px 0 5px 0 rgba(0,0,0,.4);
+      transform: rotate(4deg);
+    }
+    
+    80% {
+      box-shadow:  inset -8px 0 5px 0 rgba(0,0,0,.4);
+      transform: rotate(-2deg);
+    }
+    
+    100% {
+      box-shadow:  inset -7px 0 5px 0 rgba(0,0,0,.4);
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes anti-wiggle {
+    20% {
+      transform: translateX(4px) rotate(-7deg);
+    }
+    
+    40% {
+      transform: translateX(-8px)  rotate(14deg);
+    }
+    
+    60% {
+      transform: translateX(2px)  rotate(-4deg);
+    }
+    
+    80% {
+      transform: translateX(-1px)  rotate(2deg);
+    }
+    
+    100% {
+      transform: translateX(0px) rotate(0deg);
+    }
+  }
+</style>
 <body class="bg-primary">
     <header class="">
         <a href="/" class="flex justify-center" id="logo">
             <img src="./src/assets/images/pokestats.png" alt="PokeStats" class="w-auto h-16 mt-5">
         </a>
-        <p class="text-center text-white text-xl py-4">Séléctionnez une génération ou un type pour voir les pokémons !</p>
+        <p class="text-center text-white text-xl py-4">Séléctionnez une génération pour voir les pokémons !</p>
     </header>
 
     <main>
@@ -20,8 +142,9 @@
             <a class="button" id="return" onclick="window.location.search === '' ? false : window.history.go(-1)"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
 
-        <div class="container" id="generations"></div>
-        <div class="container" id="types"></div>
+        <div class="container my-10 mx-auto justify-center flex flex-wrap gap-10" id="generations">
+            
+        </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-center gap-y-6 mx-20" id="pokemons">
         </div>
@@ -49,17 +172,17 @@
         </div>
     </main>
 
-    <div class="mx-auto px-5 hidden">
+    <div class="mx-auto px-5 hidden rounded-full bg-secondary">
         <div class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
           <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
           <div>
-            <div class="my-6 flex items-center justify-between px-4">
+            <div class="my-6 flex items-center justify-between px-4 w-32 h-32">
               <p class="font-bold text-gray-500">${poke.name.fr}</p>
             </div>
           </div>
         </div>
       </div>
-
+      
     <script src="./src/assets/js/API/generation.js"></script>
     <script src="./src/assets/js/API/pokemon.js"></script>
     <script src="./src/assets/js/API/type.js"></script>

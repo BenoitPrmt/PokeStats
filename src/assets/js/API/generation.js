@@ -6,16 +6,10 @@ function showGenerations(max) {
     let genEle = document.getElementById("generations");
 
     for (let i = 1; i < max + 1; i++) {
-        let gen = document.createElement("a");
-        gen.setAttribute("id", i)
-        gen.classList.add("card")
-        gen.setAttribute("href", "?gen=" + i)
 
-        let title = document.createElement("h3");
-        title.innerHTML = i + "G"
-
-        gen.appendChild(title)
-        genEle.appendChild(gen)
+        genEle.innerHTML += `
+        <a href="?gen=${i}" id="${i}" class="w-32 h-32 bg-secondary pokeball text-white text-xl p-2 rounded-full flex justify-center items-center">${i}</a>
+        `
     }
 }
 
