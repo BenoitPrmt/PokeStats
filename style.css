@@ -1,29 +1,8 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-a {
-  text-decoration: none;
-  color: rgb(22, 22, 22);
-}
-
-a:visited {
-  color: rgb(22, 22, 22);
-}
-
-body {
-  /* background-color: rgb(242, 242, 242); */
-  background-color: #5cb9ff;
-  color: white;
-}
-
 header {
   margin-bottom: 20px;
-}
-
-#logo {
-  height: 50px;
-  width: auto;
 }
 
 #logo:hover {
