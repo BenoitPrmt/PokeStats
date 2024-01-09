@@ -1,10 +1,10 @@
 const STAT_TEXT = {
-    HP: "PV",
-    attack: "Attaque",
-    defense: "Défense",
-    special_attack: "Attaque Spéciale",
-    special_defense: "Défense Spéciale",
-    speed: "Vitesse",
+    hp: "PV",
+    atk: "Attaque",
+    def: "Défense",
+    spe_atk: "Attaque Spéciale",
+    spe_def: "Défense Spéciale",
+    vit: "Vitesse",
 };
 
 
@@ -18,7 +18,7 @@ function showPokemon(poke) {
 
     let pokemonImage = document.createElement("img");
     pokemonImage.setAttribute("id", "poke-image");
-    pokemonImage.setAttribute("src", poke.image);
+    pokemonImage.setAttribute("src", poke.sprites.regular);
 
     sectionLeft.appendChild(pokemonImage);
     // ---- END SECTION LEFT ----
@@ -35,7 +35,7 @@ function showPokemon(poke) {
 
     let pokemonTitle = document.createElement("h2");
     pokemonTitle.setAttribute("id", "poke-name");
-    pokemonTitle.innerHTML = poke.name;
+    pokemonTitle.innerHTML = poke.name.fr;
 
     let pokemonTypes = document.createElement("div");
     pokemonTypes.setAttribute("id", "poke-types");
@@ -64,7 +64,7 @@ function showPokemon(poke) {
     generation.setAttribute("id", "generation");
 
     let generationTitle = document.createElement("h3");
-    generationTitle.innerHTML = "Génération " + poke.apiGeneration;
+    generationTitle.innerHTML = "Génération " + poke.generation;
 
     generation.appendChild(generationTitle);
 
@@ -101,7 +101,7 @@ function getPokemon(poke_id) {
     const pokeSession = localStorage.getItem(poke_id);
 
     if (!pokeSession) {
-        const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon/" + poke_id, {
+        const apiCall = fetch("https://tyradex.tech/api/v1/pokemon/" + poke_id, {
             method: "GET",
             headers: headers,
         }).then((response) => response.json())
