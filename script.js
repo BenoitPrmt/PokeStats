@@ -14,7 +14,7 @@ const typeId = urlParams.get("type");
 if (generationId === null) {
     if (typeId === null) {
         if (pokemonId === null) {
-            showGenerations(8)
+            showGenerations(9)
             showTypes()
         } else {
             getPokemon(pokemonId)
