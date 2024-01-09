@@ -18,7 +18,6 @@ if (generationId === null) {
         if (pokemonId === null) {
             pokeSection.style.display = "none";
             showGenerations(9)
-            showTypes()
         } else {
             pokeSection.style.display = "flex";
             getPokemon(pokemonId)
