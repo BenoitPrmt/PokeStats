@@ -40,16 +40,16 @@ function showPokemon(poke) {
     let pokemonTypes = document.createElement("div");
     pokemonTypes.setAttribute("id", "poke-types");
 
-    for (let type in poke.apiTypes) {
+    for (let type in poke.types) {
         // show type image
         let typeEleLink = document.createElement("a");
-        typeEleLink.setAttribute("href", "?type=" + poke.apiTypes[type].name);
+        typeEleLink.setAttribute("href", "?type=" + poke.types[type].name);
 
         let typeEle = document.createElement("img");
         typeEle.classList.add("type");
-        typeEle.setAttribute("src", poke.apiTypes[type].image);
-        typeEle.setAttribute("title", poke.apiTypes[type].name);
-        typeEle.setAttribute("alt", poke.apiTypes[type].name);
+        typeEle.setAttribute("src", poke.types[type].image);
+        typeEle.setAttribute("title", poke.types[type].name);
+        typeEle.setAttribute("alt", poke.types[type].name);
 
         typeEleLink.appendChild(typeEle);
         pokemonTypes.appendChild(typeEleLink);
