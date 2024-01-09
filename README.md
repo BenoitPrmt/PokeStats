@@ -1,5 +1,5 @@
 <p align="center">
-  <img align="center" src="assets/pokestats.png">
+  <img align="center" src="src/assets/images/pokestats.png">
 </P>
 
 <p align="center">
