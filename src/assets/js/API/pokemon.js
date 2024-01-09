@@ -30,7 +30,7 @@ function showPokemon(poke) {
         typeEleLink.setAttribute("href", "?type=" + poke.types[type].name);
 
         let typeEle = document.createElement("img");
-        typeEle.classList.add("type");
+        typeEle.classList.add('w-10', 'h-10', 'rounded-full');
         typeEle.setAttribute("src", poke.types[type].image);
         typeEle.setAttribute("title", poke.types[type].name);
         typeEle.setAttribute("alt", poke.types[type].name);
@@ -61,29 +61,28 @@ function showPokemon(poke) {
     // ---- END SECTION RIGHT ----
 
     // OTHER DATA
-    let pEle = document.createElement("p");
-    pEle.innerHTML = `
-    ${poke.height}
-    ${poke.weight}
-    ${poke.catch_rate}
-    // ${JSON.stringify(poke.evolution)}
-    `
+    let WeightHeight = document.getElementById('poke-weight');
+    WeightHeight.textContent = `Hauteur : ${poke.height} || Poids : ${poke.weight}`;
 
-    // EVOLUTIONS
-    let evolutionsSection = document.createElement("div");
-
-    for (let evol in poke.evolution) {
-        if (poke.evolution[evol] != null && evol !== "mega") {
-            for (let evo in poke.evolution[evol]) {
-                getPokemon(poke.evolution[evol][evo].pokedexId, true).then(pokeData => {
-                    let evolImg = document.createElement("img")
-                    evolImg.setAttribute("src", `${pokeData.sprites.regular}`)
+    // CAROUSEL SHINNY
+    let imgShiny = document.getElementById('poke-image-2');
+    imgShiny.setAttribute('src', poke.sprites.shiny);
     
-                    evolutionsSection.appendChild(evolImg)
-                });
-            }
-        }
-    }
+    // EVOLUTIONS
+    // let evolutionsSection = document.createElement("div");
+
+    // for (let evol in poke.evolution) {
+    //     if (poke.evolution[evol] != null && evol !== "mega") {
+    //         for (let evo in poke.evolution[evol]) {
+    //             getPokemon(poke.evolution[evol][evo].pokedexId, true).then(pokeData => {
+    //                 let evolImg = document.createElement("img")
+    //                 evolImg.setAttribute("src", `${pokeData.sprites.regular}`)
+    
+    //                 evolutionsSection.appendChild(evolImg)
+    //             });
+    //         }
+    //     }
+    // }
 
     document.getElementById("pokemon").appendChild(pEle)
     document.getElementById("pokemon").appendChild(evolutionsSection)
