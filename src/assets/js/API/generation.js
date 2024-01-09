@@ -25,17 +25,20 @@ function showPokemons(pokemonsList, gen, add_to_session) {
 
     for (poke of pokemonsList) {
         let pokeEle = document.createElement("a");
-        pokeEle.classList.add("card")
         pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId)
 
-        let pokeName = document.createElement("h3");
-        pokeName.innerHTML = poke.name.fr
-
-        let pokeImage = document.createElement("img");
-        pokeImage.setAttribute("src", poke.sprites.regular)
-
-        pokeEle.appendChild(pokeName)
-        pokeEle.appendChild(pokeImage)
+        pokeEle.innerHTML = `
+        <div class="mx-auto px-5">
+          <div class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+            <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
+            <div>
+              <div class="my-6 flex items-center justify-between px-4">
+                <p class="font-bold text-gray-500">${poke.name.fr}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        `
 
         if (add_to_session) {
             pokemons.push({

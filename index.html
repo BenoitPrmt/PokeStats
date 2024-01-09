@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
-<body>
-    <header class="bg-pink-300">
-        <!-- <h1><a href="/">PokeStats</a></h1> -->
-        <a href="/" class="center" id="logo"><img src="./src/assets/images/pokestats.png" alt="PokeStats"></a>
-        <p class="center">Séléctionnez une génération ou un type pour voir les pokémons !</p>
+<body class="bg-primary">
+    <header class="">
+        <a href="/" class="flex justify-center" id="logo">
+            <img src="./src/assets/images/pokestats.png" alt="PokeStats" class="w-auto h-16 mt-5">
+        </a>
+        <p class="text-center text-white text-xl py-4">Séléctionnez une génération ou un type pour voir les pokémons !</p>
     </header>
 
     <main>
@@ -20,11 +21,10 @@
         </div>
 
         <div class="container" id="generations"></div>
-        <hr class="container">
         <div class="container" id="types"></div>
-        <!-- <hr class="container"> -->
 
-        <div class="container" id="pokemons"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-center gap-y-6 mx-20" id="pokemons">
+        </div>
         <div class="container" id="pokemon">
             <div id="section-left">
                 <!-- IMAGE DU POKEMON -->
@@ -48,6 +48,17 @@
             </div>
         </div>
     </main>
+
+    <div class="mx-auto px-5 hidden">
+        <div class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+          <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
+          <div>
+            <div class="my-6 flex items-center justify-between px-4">
+              <p class="font-bold text-gray-500">${poke.name.fr}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="./src/assets/js/API/generation.js"></script>
     <script src="./src/assets/js/API/pokemon.js"></script>
