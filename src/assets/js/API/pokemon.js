@@ -18,10 +18,11 @@ function showPokemon(poke) {
 
     // ---- SECTION RIGHT ----
     let pokemonTitle = document.getElementById("poke-name");
-    pokemonTitle.innerHTML = poke.name.fr;
+    pokemonTitle.textContent = `Nom du pokémon : ${poke.name.fr}`;
 
     // let pokemonTypes = document.createElement("div");
     let pokemonTypes = document.getElementById("poke-types");
+
 
     for (let type in poke.types) {
         // show type image
@@ -41,8 +42,12 @@ function showPokemon(poke) {
 
     // GENERATION
     let generationTitle = document.getElementById("gen-title");
-    generationTitle.innerHTML = "Génération " + poke.generation;
+    generationTitle.textContent = `Génération : ${poke.generation}`
 
+        // id
+        let pokemonId = document.getElementById("poke-id");
+        pokemonId.textContent = `N° : ${poke.pokedexId}`
+    
 
     // STATS
     let statsList = document.getElementById("stats-list");
