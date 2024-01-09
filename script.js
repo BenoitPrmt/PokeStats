@@ -11,18 +11,24 @@ const pokemonId = urlParams.get("pokemon");
 const generationId = urlParams.get("gen");
 const typeId = urlParams.get("type");
 
+let pokeSection = document.getElementById("pokemon");
+
 if (generationId === null) {
     if (typeId === null) {
         if (pokemonId === null) {
+            pokeSection.style.display = "none";
             showGenerations(9)
             showTypes()
         } else {
+            pokeSection.style.display = "flex";
             getPokemon(pokemonId)
         }
     } else {
+        pokeSection.style.display = "none";
         showPokemonsByType(typeId)
     }
 } else {
+    pokeSection.style.display = "none";
     getGeneration(generationId)
 }
 

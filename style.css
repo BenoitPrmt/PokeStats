@@ -71,7 +71,7 @@ hr {
 }
 
 #pokemon {
-  display: flex;
+  display: none;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 10px;
