@@ -59,6 +59,15 @@ function showPokemon(poke) {
     sectionHeader.appendChild(pokemonTypes);
     // -- END SECTION HEADER --
 
+    // GENERATION
+    let generation = document.createElement("div");
+    generation.setAttribute("id", "generation");
+
+    let generationTitle = document.createElement("h3");
+    generationTitle.innerHTML = "Génération " + poke.apiGeneration;
+
+    generation.appendChild(generationTitle);
+
 
     // STATS
     let stats = document.createElement("div");
@@ -79,6 +88,7 @@ function showPokemon(poke) {
     stats.appendChild(statsList);
 
     sectionRight.appendChild(sectionHeader);
+    sectionRight.appendChild(generation)
     sectionRight.appendChild(stats);
     // ---- END SECTION RIGHT ----
 

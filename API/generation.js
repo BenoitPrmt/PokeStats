@@ -29,10 +29,10 @@ function showPokemons(pokemonsList, gen, add_to_session) {
         pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId)
 
         let pokeName = document.createElement("h3");
-        pokeName.innerHTML = poke.name
+        pokeName.innerHTML = poke.name.fr
 
         let pokeImage = document.createElement("img");
-        pokeImage.setAttribute("src", poke.sprite)
+        pokeImage.setAttribute("src", poke.sprites.regular)
 
         pokeEle.appendChild(pokeName)
         pokeEle.appendChild(pokeImage)
@@ -40,8 +40,8 @@ function showPokemons(pokemonsList, gen, add_to_session) {
         if (add_to_session) {
             pokemons.push({
                 pokedexId: poke.pokedexId,
-                name: poke.name,
-                sprite: poke.sprite
+                name: { fr: poke.name.fr },
+                sprites: { regular: poke.sprites.regular, shiny: poke.sprites.shiny }
             })
         }
         pokemonsSection.appendChild(pokeEle)
@@ -63,7 +63,7 @@ function getGeneration(gen) {
     const generationSession = localStorage.getItem("gen" + gen);
 
     if (!generationSession) {
-        const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon/generation/" + gen, {
+        const apiCall = fetch("https://tyradex.tech/api/v1/gen/" + gen, {
             method: "GET",
             headers: headers,
         }).then((response) => response.json())

@@ -12,7 +12,8 @@ a:visited {
 }
 
 body {
-  background-color: rgb(242, 242, 242);
+  /* background-color: rgb(242, 242, 242); */
+  background-color: #5cb9ff;
 }
 
 header {
