@@ -6,7 +6,6 @@ function showGenerations(max) {
     let genEle = document.getElementById("generations");
 
     for (let i = 1; i < max + 1; i++) {
-
         genEle.innerHTML += `
         <a href="?gen=${i}" id="${i}" class="w-32 h-32 pokeball text-white text-xl p-2 rounded-full flex justify-center items-center">${i}</a>
         `
@@ -16,6 +15,8 @@ function showGenerations(max) {
 function showPokemons(pokemonsList, gen, add_to_session) {
     let pokemonsSection = document.getElementById("pokemons")
     let pokemons = [];
+
+    pokemonsSection.innerHTML = ""
 
     for (poke of pokemonsList) {
         let pokeEle = document.createElement("a");
@@ -46,33 +47,16 @@ function showPokemons(pokemonsList, gen, add_to_session) {
     if (add_to_session) localStorage.setItem("gen" + gen, JSON.stringify(pokemons));
 }
 
-function getGeneration(gen) {
-
-    let pokemonsSection = document.getElementById("pokemons")
-    pokemonsSection.innerHTML = ""
-
-    let loadingEle = document.createElement("h4");
-    loadingEle.innerHTML = "Chargement...";
-    loadingEle.classList.add("loading-text");
-
-    pokemonsSection.appendChild(loadingEle);
-
-    const generationSession = localStorage.getItem("gen" + gen);
-
-    if (!generationSession) {
-        const apiCall = fetch("https://tyradex.tech/api/v1/gen/" + gen, {
+async function getGeneration(gen) {
+    try {
+        const response = await fetch("https://tyradex.tech/api/v1/gen/" + gen, {
             method: "GET",
             headers: headers,
-        }).then((response) => response.json())
-            .then((response) => {
-                pokemonsSection.innerHTML = ""
-
-                showPokemons(response, gen, true);
-            })
-            .catch((error) => { error });
-    } else {
-        pokemonsSection.innerHTML = ""
-        showPokemons(JSON.parse(generationSession), gen, false);
-
+        });
+        const response_1 = await response.json();
+        return response_1;
+    } catch (error) {
+        error;
     }
+
 }
