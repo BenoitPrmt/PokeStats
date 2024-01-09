@@ -8,7 +8,7 @@ function showGenerations(max) {
     for (let i = 1; i < max + 1; i++) {
 
         genEle.innerHTML += `
-        <a href="?gen=${i}" id="${i}" class="w-32 h-32 bg-secondary pokeball text-white text-xl p-2 rounded-full flex justify-center items-center">${i}</a>
+        <a href="?gen=${i}" id="${i}" class="w-32 h-32 pokeball text-white text-xl p-2 rounded-full flex justify-center items-center">${i}</a>
         `
     }
 }
