@@ -5,7 +5,6 @@ if (window.location.search === "") {
     returnButton.style.display = "inline-block";
 }
 
-
 const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get("pokemon");
 const generationId = urlParams.get("gen");
@@ -20,7 +19,7 @@ if (generationId === null) {
             showGenerations(9)
         } else {
             pokeSection.style.display = "flex";
-            getPokemon(pokemonId)
+            getPokemon(pokemonId).then(data => showPokemon(data))
         }
     } else {
         pokeSection.style.display = "none";

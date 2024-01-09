@@ -21,7 +21,7 @@ function showPokemon(poke) {
     pokemonTitle.innerHTML = poke.name.fr;
 
     // let pokemonTypes = document.createElement("div");
-    let pokemonTypes= document.getElementById("poke-types");
+    let pokemonTypes = document.getElementById("poke-types");
 
     for (let type in poke.types) {
         // show type image
@@ -49,28 +49,56 @@ function showPokemon(poke) {
 
     for (let stat in poke.stats) {
         let statEle = document.createElement("li");
-        statEle.setAttribute("id", "stat-"+stat)
+        statEle.setAttribute("id", "stat-" + stat)
         statEle.innerHTML = STAT_TEXT[stat] + " : " + poke.stats[stat];
         statsList.appendChild(statEle);
     }
     // ---- END SECTION RIGHT ----
 
+    // OTHER DATA
+    let pEle = document.createElement("p");
+    pEle.innerHTML = `
+    ${poke.height}
+    ${poke.weight}
+    ${poke.catch_rate}
+    // ${JSON.stringify(poke.evolution)}
+    `
+
+    // EVOLUTIONS
+    let evolutionsSection = document.createElement("div");
+
+    for (let evol in poke.evolution) {
+        if (poke.evolution[evol] != null && evol !== "mega") {
+            for (let evo in poke.evolution[evol]) {
+                getPokemon(poke.evolution[evol][evo].pokedexId, true).then(pokeData => {
+                    let evolImg = document.createElement("img")
+                    evolImg.setAttribute("src", `${pokeData.sprites.regular}`)
+    
+                    evolutionsSection.appendChild(evolImg)
+                });
+            }
+        }
+    }
+
+    document.getElementById("pokemon").appendChild(pEle)
+    document.getElementById("pokemon").appendChild(evolutionsSection)
+
 }
 
-function getPokemon(poke_id) {
-    const pokeSession = localStorage.getItem(poke_id);
+async function getPokemon(poke_id) {
+    try {
+        const pokeSession = localStorage.getItem(poke_id);
 
-    if (!pokeSession) {
-        const apiCall = fetch("https://tyradex.tech/api/v1/pokemon/" + poke_id, {
+        const response = await fetch("https://tyradex.tech/api/v1/pokemon/" + poke_id, {
             method: "GET",
             headers: headers,
-        }).then((response) => response.json())
-            .then((response) => {
-                showPokemon(response)
-                localStorage.setItem(poke_id, JSON.stringify(response))
-            })
-            .catch((error) => { error });
-    } else {
-        showPokemon(JSON.parse(pokeSession))
+        });
+        const data = await response.json();
+        if (!pokeSession) {
+            localStorage.setItem(poke_id, JSON.stringify(data))
+        }
+        return data;
+    } catch (error) {
+        error;
     }
 }
