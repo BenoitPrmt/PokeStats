@@ -9,11 +9,9 @@ function showGenerations(max) {
         let gen = document.createElement("a");
         gen.setAttribute("id", i)
         gen.classList.add("card")
-        // gen.setAttribute("onclick", "getGeneration(" + i + ")")
         gen.setAttribute("href", "?gen=" + i)
 
         let title = document.createElement("h3");
-        // title.innerHTML = "Génération " + i
         title.innerHTML = i + "G"
 
         gen.appendChild(title)
@@ -26,7 +24,6 @@ function showPokemons(pokemonsList, gen, add_to_session) {
     let pokemons = [];
 
     for (poke of pokemonsList) {
-        console.log(poke);
         let pokeEle = document.createElement("a");
         pokeEle.classList.add("card")
         pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId)
@@ -71,15 +68,12 @@ function getGeneration(gen) {
             headers: headers,
         }).then((response) => response.json())
             .then((response) => {
-                console.log(response);
                 pokemonsSection.innerHTML = ""
 
                 showPokemons(response, gen, true);
             })
             .catch((error) => { error });
     } else {
-        console.log(generationSession);
-
         pokemonsSection.innerHTML = ""
         showPokemons(JSON.parse(generationSession), gen, false);
 

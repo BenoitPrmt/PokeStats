@@ -1,5 +1,4 @@
 // get all pokemons of the same type
-
 function fetchTypes() {
     fetch("https://pokebuildapi.fr/api/v1/types")
         .then(response => response.json())
@@ -25,9 +24,6 @@ function showTypes() {
         typesSession = JSON.parse(typesSession);
 
         for (let type of typesSession) {
-
-            console.log(type);
-
             let typeEle = document.createElement("a");
             typeEle.setAttribute("href", "?type=" + type.name);
 
@@ -37,11 +33,7 @@ function showTypes() {
             typeImage.setAttribute("title", type.name);
             typeImage.setAttribute("src", type.image);
 
-            // let typeName = document.createElement("h3");
-            // typeName.innerHTML = type.name;
-
             typeEle.appendChild(typeImage);
-            // typeEle.appendChild(typeName);
 
             typesEle.appendChild(typeEle);
         }
@@ -51,7 +43,6 @@ function showTypes() {
 }
 
 function fetchPokemons(type) {
-    console.log(type);
     fetch("https://pokebuildapi.fr/api/v1/pokemon/type/" + type)
         .then(response => response.json())
         .then(data => {
@@ -77,9 +68,6 @@ function showPokemonsByType(type) {
         pokemonsSession = JSON.parse(pokemonsSession);
 
         for (let pokemon of pokemonsSession) {
-
-            console.log(pokemon);
-
             let pokemonEle = document.createElement("a");
             pokemonEle.classList.add("card");
             pokemonEle.setAttribute("href", "?pokemon=" + pokemon.pokedexId);

@@ -7,16 +7,6 @@ const STAT_TEXT = {
     speed: "Vitesse",
 };
 
-// const apiCall = fetch("https://pokebuildapi.fr/api/v1/pokemon", {
-//     method: "GET",
-//     headers: headers,
-// }).then((response) => response.json())
-//     .then((response) => {
-//         console.log(response);
-//     })
-//     .catch((error) => { error });
-
-
 
 function showPokemon(poke) {
 
@@ -35,10 +25,10 @@ function showPokemon(poke) {
 
 
     // ---- SECTION RIGHT ----
-    
+
     let sectionRight = document.createElement("div");
     sectionRight.setAttribute("id", "section-right");
-    
+
     // -- SECTION HEADER --
     let sectionHeader = document.createElement("div");
     sectionHeader.setAttribute("id", "section-header");
@@ -49,7 +39,7 @@ function showPokemon(poke) {
 
     let pokemonTypes = document.createElement("div");
     pokemonTypes.setAttribute("id", "poke-types");
-    
+
     for (let type in poke.apiTypes) {
         // show type image
         let typeEleLink = document.createElement("a");
@@ -98,8 +88,6 @@ function showPokemon(poke) {
 }
 
 function getPokemon(poke_id) {
-    console.log(window.location);
-
     const pokeSession = localStorage.getItem(poke_id);
 
     if (!pokeSession) {
@@ -108,8 +96,6 @@ function getPokemon(poke_id) {
             headers: headers,
         }).then((response) => response.json())
             .then((response) => {
-                console.log(response);
-
                 showPokemon(response)
                 localStorage.setItem(poke_id, JSON.stringify(response))
             })
