@@ -38,11 +38,12 @@ const generationId = urlParams.get("gen");
 let pokeSection = document.getElementById("pokemon");
 let searchSection = document.getElementById("search-section");
 
+showGenerations(9)
+
 if (generationId === null) {
     if (pokemonId === null) {
         pokeSection.style.display = "none";
         searchSection.style.display = "block";
-        showGenerations(9)
     } else {
         pokeSection.style.display = "flex";
         searchSection.style.display = "none";
