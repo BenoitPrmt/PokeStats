@@ -117,3 +117,17 @@ async function getPokemon(poke_id) {
         error;
     }
 }
+
+async function getAllPokemons() {
+    try {
+        const response = await fetch("https://tyradex.tech/api/v1/pokemon", {
+            method: "GET",
+            headers: headers,
+        });
+        let data = await response.json();
+        data = data.filter(poke => poke.pokedexId !== 0)
+        return data;
+    } catch (error) {
+        error;
+    }
+}
