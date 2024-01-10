@@ -15,14 +15,7 @@
 
 <style>
     .pokeball {
-        display: inline-block;
-        margin: 20px;
-        width: 100px;
-        height: 100px;
-        background: #b71c1c;
-        border-radius: 50%;
         box-shadow: inset 0 -72px 0 -37px #fff, inset 0 -76px 0 -35px #000, 0 0 0 5px #000;
-        position: relative;
         transition: .4s;
         transform-origin: bottom center;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -48,6 +41,17 @@
         left: 40px;
         border: 1px solid rgba(0, 0, 0, .4);
         box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 5px #fff, 0 0 0 10px #000;
+    }
+    @media screen and (max-width: 800px) {
+        .pokeball::before{
+            top: 25px;
+            left: 20px;
+            width: 8px;
+            height: 8px;
+        }
+        .pokeball {
+        box-shadow: inset 0 -52px 0 -27px #fff, inset 0 -60px 0 -30px #000, 0 0 0 3px #000;
+    }
     }
 
     @keyframes wiggle {
@@ -211,13 +215,13 @@
         </div>
     </main>
     <!-- CLASS BONUS FOR TAILWIND -->
-    <div class="mx-auto px-5 hidden rounded-full w-80 bg-secondary">
+    <div class="mx-auto px-5 hidden  rounded-full w-80 bg-secondary">
         <div
-            class="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+            class="max-w-xs cursor-pointer inline-block rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
             <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
             <div>
                 <div class="my-6 flex items-center justify-between px-4 w-32 h-32">
-                    <p class="font-bold text-gray-500">${poke.name.fr}</p>
+                    <p class="font-bold text-gray-500 w-14 h-14"></p>
                 </div>
             </div>
         </div>
@@ -230,24 +234,18 @@
                 alt="movie.title" />
 
             <div class="group p-6 grid z-10">
-                <a href='' class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2">
-                    Spider-Man: Across the Spider-Verse
+                <a href='' class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 w-24 h-24">
                 </a>
                 <span class="text-slate-400 pt-2 font-semibold">
-
-                    (2023)
                 </span>
                 <div class="h-28">
                     <span class="line-clamp-4 py-2 text-sm font-light leading-relaxed">
-                        Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People
-                        charged with protecting its very existence. When the heroes clash on how to handle a new threat,
-                        Miles must redefine what it means to be a hero.
                     </span>
                 </div>
-                <div class=" grid-cols-2 flex group justify-between">
+                <div class=" grid-cols-2 flex group justify-between md:h-24 md:w-24">
                     <div class="font-black flex flex-col">
-                        <span class="text-yellow-500 text-xl">IMDB SCORE</span>
-                        <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
+                        <span class="text-yellow-500 text-xl"></span>
+                        <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 bg-pokeballRed">
                             8.8
                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -268,7 +266,6 @@
                     <div class="flex flex-col items-end">
                         <div class="h-7" />
                         <span class="text-3xl  font-bold  gap-x-2 text-slate-300">
-                            # 8
                         </span>
                     </div>
                 </div>
