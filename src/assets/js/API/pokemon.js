@@ -74,7 +74,7 @@ function showPokemon(poke) {
         
         if (element.multiplier < 1) {
             console.log('point fort' + element.name);
-        }else{
+        }else if(element.multiplier > 1){
             console.log('point faible' + element.name);
         }
     });
