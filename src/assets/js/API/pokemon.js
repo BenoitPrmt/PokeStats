@@ -67,6 +67,17 @@ function showPokemon(poke) {
     // CAROUSEL SHINNY
     let imgShiny = document.getElementById('poke-image-2');
     imgShiny.setAttribute('src', poke.sprites.shiny);
+
+    console.log(poke);
+
+    poke.resistances.forEach(element => {
+        
+        if (element.multiplier < 1) {
+            console.log('point fort' + element.name);
+        }else if(element.multiplier > 1){
+            console.log('point faible' + element.name);
+        }
+    });
     
     // EVOLUTIONS
     // let evolutionsSection = document.createElement("div");
