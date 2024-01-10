@@ -40,6 +40,10 @@ if (generationId === null) {
         let allData = data;
 
         let searchBar = document.getElementById("search-bar");
+        if (searchBar.value !== "") {
+            searchBar.value = "";
+        }
+
         searchBar.addEventListener("keyup", function (event) {
             dataFiltered = data.filter(poke => poke.name.fr.toLowerCase().includes(searchBar.value.toLowerCase()))
             console.log(dataFiltered);
