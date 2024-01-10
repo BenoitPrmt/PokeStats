@@ -14,46 +14,25 @@
 </head>
 
 <style>
-    .pokeball {
-        box-shadow: inset 0 -72px 0 -37px #fff, inset 0 -76px 0 -35px #000, 0 0 0 5px #000;
-        transition: .4s;
-        transform-origin: bottom center;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    }
     .pokeball:hover {
         cursor: pointer;
         animation: anti-wiggle 1s ease-in-out;
     }
-    .pokeball:focus,
-    .pokeball:active {
-        outline: 0;
-    }
-    .pokeball::before {
-        display: block;
-        content: "";
+    .lien{
         position: absolute;
-        width: 100%;
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        background: #fff;
-        top: 50px;
-        left: 40px;
-        border: 1px solid rgba(0, 0, 0, .4);
-        box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 5px #fff, 0 0 0 10px #000;
+        display: inline-block;
+        top: 25%; left: 50%; /* à 25%/50% du parent référent */
+        transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 1rem;
     }
-    @media screen and (max-width: 800px) {
-        .pokeball::before{
-            top: 25px;
-            left: 20px;
-            width: 8px;
-            height: 8px;
+    @media screen and (max-width: 900px) {
+        .lien{
+            font-size: 1rem;
         }
-        .pokeball {
-        box-shadow: inset 0 -52px 0 -27px #fff, inset 0 -60px 0 -30px #000, 0 0 0 3px #000;
     }
-    }
-
     @keyframes wiggle {
         20% {
             box-shadow: inset -5px 0 5px 0 rgba(0, 0, 0, .4);
@@ -127,8 +106,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="container my-10 mx-auto justify-center flex flex-wrap gap-10" id="generations">
+        <div class="container my-10 mx-auto justify-center flex flex-wrap" id="generations">
 
         </div>
 
@@ -221,13 +199,13 @@
             <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
             <div>
                 <div class="my-6 flex items-center justify-between px-4 w-32 h-32">
-                    <p class="font-bold text-gray-500 w-14 h-14"></p>
+                    <p class="font-bold text-gray-500 w-10 h-10"></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class='hidden mx-auto  rounded-3xl shadow-xl'>
+    <div class='hidden mx-auto  rounded-3xl shadow-xl w-20 h-20'>
         <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
             <img src="https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_QL75_UX380_CR0,1,380,562_.jpg"
                 width="375" height="200" class="rounded-t-3xl justify-center grid h-80 object-cover"
@@ -236,7 +214,7 @@
             <div class="group p-6 grid z-10">
                 <a href='' class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 w-24 h-24">
                 </a>
-                <span class="text-slate-400 pt-2 font-semibold">
+                <span class="text-slate-400 pt-2 font-semibold md:w-32 md:h-32">
                 </span>
                 <div class="h-28">
                     <span class="line-clamp-4 py-2 text-sm font-light leading-relaxed">
