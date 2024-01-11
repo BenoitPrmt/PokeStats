@@ -118,13 +118,13 @@
             <!-- BTN NEXT && BTN PREVIOUS && BTN RANDOM -->
             <section class="flex justify-between items-center mx-20 mt-5">
                 <a class="block w-20 h-20 cursor-pointer" id="return"
-                onclick="window.location.search === '' ? false : window.history.go(-1)">
+                onclick="navigatePage('previous')">
                     <img src="./src/assets/images/left.png" alt="">
                 </a>
-                <a href="" class="block w-20 h-20" onclick="getRandomPokemon(event)">
+                <a class="block w-20 h-20 cursor-pointer" onclick="getRandomPokemon(event)">
                     <img src="./src/assets/images/random.png" alt="">
                 </a>
-                <a href="" class="bolck w-20 h-20">
+                <a class="bolck w-20 h-20 cursor-pointer" onclick="navigatePage('next')">
                     <img src="./src/assets/images/right.png" alt="">
                 </a>
             </section>

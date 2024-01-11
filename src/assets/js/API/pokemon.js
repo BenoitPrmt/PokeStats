@@ -12,6 +12,11 @@ function getRandomPokemon(event) {
     window.location.replace(`?pokemon=${Math.floor(Math.random() * 1000)}`)
 }
 
+function getPokemonPage(pokeId) {
+    console.log(pokeId);
+    window.location.replace(`?pokemon=${pokeId}`)
+}
+
 function showPokemon(poke) {
     // ---- SECTION LEFT ----
     let pokemonImage = document.getElementById("poke-image");
