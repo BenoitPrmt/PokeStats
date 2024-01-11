@@ -83,6 +83,7 @@ function showPokemon(poke) {
                         let evolImg = document.createElement('div');
 
                         evolImg.innerHTML = `
+                        <a href="?pokemon=${pokeData.pokedexId}">
                     <div class=' mx-auto bg-white rounded-3xl shadow-xl'>
                     <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
                  <img
@@ -99,15 +100,11 @@ function showPokemon(poke) {
                      class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2"
                    >
                    </a>
-                   <span class="text-slate-400 pt-2 font-semibold">
-                     
-           (2023)
-                   </span>
                    <div class=" grid-cols-2 flex group justify-between">
                      <div class="font-black flex flex-col">
-                       <span class="text-yellow-500 text-xl">IMDB SCORE</span>
+                       <span class="text-yellow-500 text-xl">${pokeData.name.fr}</span>
                        <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
-                        8.8
+                        ${poke.evolution[evol][evo].condition}
                         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
            
            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -122,12 +119,12 @@ function showPokemon(poke) {
                      <div class="flex flex-col items-end">
                        <div class="h-7" />
                        <span class="text-3xl  font-bold  gap-x-2 text-slate-300">
-                         # 8
+                         # ${pokeData.pokedexId}
                        </span>
                      </div>
                  </div>
                </div>
-               </div>
+               </div></a>
                     `;
                         let test = document.getElementById('pokemon');
                         test.appendChild(evolImg);
