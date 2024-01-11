@@ -7,6 +7,10 @@ const STAT_TEXT = {
     vit: "Vitesse",
 };
 
+function getRandomPokemon() {
+    window.location.replace(`?pokemon=${Math.floor(Math.random() * 1000)}`)
+}
+
 function showPokemon(poke) {
     // ---- SECTION LEFT ----
     let pokemonImage = document.getElementById("poke-image");
