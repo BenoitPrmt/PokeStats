@@ -26,7 +26,7 @@
 
 ## :dart: About ##
 
-Describe your project
+This project is a simple web application that allows you to view all the pokemons by generation, by type and to see the details of a pokemon.
 
 ## :sparkles: Features ##
 
@@ -38,8 +38,8 @@ Describe your project
 
 The following tools were used in this project:
 - JavaScript
+- Tailwind
 - HTML
-- CSS
 
 ## :white_check_mark: Requirements ##
 
@@ -58,7 +58,7 @@ $ cd PokeStats
 $ npm install
 
 # Run the project
-$ npm start
+$ npm run start
 
 # Run the project in your browser with the live server extension of VSCode
 # The server will initialize in the <http://localhost:3000>
