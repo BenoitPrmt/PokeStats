@@ -7,7 +7,8 @@ const STAT_TEXT = {
     vit: "Vitesse",
 };
 
-function getRandomPokemon() {
+function getRandomPokemon(event) {
+    event.preventDefault();
     window.location.replace(`?pokemon=${Math.floor(Math.random() * 1000)}`)
 }
 
