@@ -669,10 +669,6 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -763,12 +759,8 @@ video {
   height: 100%;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-14 {
-  height: 3.5rem;
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-10 {
@@ -814,14 +806,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-14 {
-  width: 3.5rem;
 }
 
 .max-w-\[370px\] {
@@ -946,11 +930,6 @@ video {
 .bg-pokeballRed {
   --tw-bg-opacity: 1;
   background-color: rgb(183 28 28 / var(--tw-bg-opacity));
-}
-
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(92 185 255 / var(--tw-bg-opacity));
 }
 
 .bg-secondary {
