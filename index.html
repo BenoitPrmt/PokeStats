@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeStats</title>
-    <link rel="shortcut icon" href="./src/assets/images/pokeball.png" type="image/x-icon">
+    <meta name="description" content="Pokédex de toutes les générations de pokemon">
+    <link rel="shortcut icon" href="./src/assets/images/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./src/assets/css/styles.css">
@@ -110,7 +111,7 @@
             id="pokemons">
         </div>
         <!-- FIRST SECTION -->
-        <div class="container flex flex-col-reverse md:flex-row items-center justify-between" id="pokemon">
+        <div class="container flex mx-20 flex-col-reverse md:flex-row items-center justify-between" id="pokemon">
             <div id="">
                 <!-- INFORMATIONS POKEMON -->
                 <ul class="text-start space-y-3 text-white text-2xl font-semibold">
@@ -175,21 +176,21 @@
                         <!-- NOM DE LA GENERATION -->
                         <h3 id="gen-title"></h3>
                     </div>
-                    <div id="stats">
-                        <ul id="stats-list"></ul>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- SECOND SECTION -->
-        <div class="container flex justify-between items-center">
-            <div class="evolution" id="pokemon">
-
+        <div class="container flex mx-20 justify-between items-center">
+            <div id="stats">
+                <ul id="stats-list"></ul>
+            </div>
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="evolution flex" id="pokemonEvolution">
+                
             </div>
         </div>
-        <div>
-            <canvas id="myChart"></canvas>
-          </div>
     </main>
     <!-- CLASS BONUS FOR TAILWIND -->
     <div class="mx-auto px-5 hidden  rounded-full w-80 bg-secondary">
