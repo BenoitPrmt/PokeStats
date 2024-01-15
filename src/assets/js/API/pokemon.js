@@ -136,7 +136,7 @@ function showPokemon(poke) {
                </div>
                </div></a>
                     `;
-                        let test = document.getElementById('pokemon');
+                        let test = document.getElementById('pokemonEvolution');
                         test.appendChild(evolImg);
                     }
                 );
