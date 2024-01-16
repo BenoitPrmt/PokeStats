@@ -23,7 +23,6 @@ function makeStatsGraph(poke)
     for (const stat in poke.stats) {
         stats.push(poke.stats[stat])
     }
-    console.log(stats)
 
     let ctx = document.getElementById("myChart").getContext("2d");
     let chart = new Chart(ctx, {
@@ -86,19 +85,7 @@ function showPokemon(poke) {
     pokemonId.textContent = `N° : ${poke.pokedexId}`;
 
     // STATS
-    let statsList = document.getElementById("stats-list");
-
-    for (let stat in poke.stats) {
-        let statEle = document.createElement("li");
-        statEle.setAttribute("id", "stat-" + stat);
-        statEle.innerHTML = STAT_TEXT[stat] + " : " + poke.stats[stat];
-        statsList.appendChild(statEle);
-    }
-
-    makeStatsGraph(poke)
-
-
-
+    makeStatsGraph(poke) // Create the radar graph
 
 
     // ---- END SECTION RIGHT ----
