@@ -17,6 +17,37 @@ function getPokemonPage(pokeId) {
     window.location.replace(`?pokemon=${pokeId}`)
 }
 
+function makeStatsGraph(poke)
+{
+    let stats = [];
+    for (const stat in poke.stats) {
+        stats.push(poke.stats[stat])
+    }
+    console.log(stats)
+
+    let ctx = document.getElementById("myChart").getContext("2d");
+    let chart = new Chart(ctx, {
+        type: "radar",
+        data: {
+            labels: ["PV", "Attaque", "Défense", "Attaque Spéciale", "Défense Spéciale", "Vitesse"],
+            datasets: [
+                {
+                    label: "Stats",
+                    borderColor: "rgb(255, 99, 132)",
+                    data: stats,
+                }
+            ],
+        },
+        options: {
+            elements: {
+                point:{
+                    radius: 0
+                }
+            }
+        },
+    });
+}
+
 function showPokemon(poke) {
     // ---- SECTION LEFT ----
     let pokemonImage = document.getElementById("poke-image");
@@ -63,6 +94,13 @@ function showPokemon(poke) {
         statEle.innerHTML = STAT_TEXT[stat] + " : " + poke.stats[stat];
         statsList.appendChild(statEle);
     }
+
+    makeStatsGraph(poke)
+
+
+
+
+
     // ---- END SECTION RIGHT ----
 
     // OTHER DATA

@@ -7,16 +7,12 @@
     <title>PokeStats</title>
     <meta name="description" content="Pokédex de toutes les générations de pokemon">
     <link rel="shortcut icon" href="./src/assets/images/favicon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
 
 <style>
-    .test{
-        background: -webkit-linear-gradient(187deg, #0382b0,#2430aa);
-        background: linear-gradient(187deg, #0382b0,#2430aa);                                            
-    }
     .pokeball:hover {
         cursor: pointer;
         animation: wiggle 1s ease-in-out;
@@ -63,186 +59,186 @@
     }
 </style>
 
-<body class="test min-h-screen">
-    <header class="">
-        <a href="/" class="flex justify-center" id="logo">
-            <img src="./src/assets/images/pokestats.png" alt="PokeStats" class="w-auto h-16 mt-5">
-        </a>
-        <p class="text-center text-white text-xl py-4">Séléctionnez une génération pour voir les pokémons !</p>
-    </header>
+<body class="bg-primary min-h-screen">
+<header class="">
+    <a href="/" class="flex justify-center" id="logo">
+        <img src="./src/assets/images/pokestats.png" alt="PokeStats" class="w-auto h-16 mt-5">
+    </a>
+    <p class="text-center text-white text-xl py-4">Séléctionnez une génération pour voir les pokémons !</p>
+</header>
 
-    <main>
-        <div>
-            <!-- search bar -->
-            <div id="search-section"
-                class="relative rounded-2xl bg-white px-1 py-2 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
-                <div class="mx-auto">
-                    <form action="" class="relative mx-auto w-max">
-                        <input type="search" id="search-bar"
-                            class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4" />
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </form>
-                </div>
+<main>
+    <div>
+        <!-- search bar -->
+        <div id="search-section"
+             class="relative rounded-2xl bg-white px-1 py-2 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+            <div class="mx-auto">
+                <form action="" class="relative mx-auto w-max">
+                    <input type="search" id="search-bar"
+                           class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4"/>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </form>
             </div>
-            <!-- BTN NEXT && BTN PREVIOUS && BTN RANDOM -->
-            <section class="flex justify-between items-center mx-20 mt-5">
-                <a class="block w-20 h-20 cursor-pointer" id="return"
-                onclick="navigatePage('previous')">
-                    <img src="./src/assets/images/left.png" alt="">
-                </a>
-                <a class="block w-20 h-20 cursor-pointer" onclick="getRandomPokemon(event)">
-                    <img src="./src/assets/images/random.png" alt="">
-                </a>
-                <a class="bolck w-20 h-20 cursor-pointer" onclick="navigatePage('next')">
-                    <img src="./src/assets/images/right.png" alt="">
-                </a>
-            </section>
         </div>
-        <div class="container my-10 mx-auto justify-center flex flex-wrap" id="generations">
+        <!-- BTN NEXT && BTN PREVIOUS && BTN RANDOM -->
+        <section class="flex justify-between items-center mx-20 mt-5">
+            <a class="block w-20 h-20 cursor-pointer" id="return"
+               onclick="navigatePage('previous')">
+                <img src="./src/assets/images/left.png" alt="">
+            </a>
+            <a class="block w-20 h-20 cursor-pointer" onclick="getRandomPokemon(event)">
+                <img src="./src/assets/images/random.png" alt="">
+            </a>
+            <a class="bolck w-20 h-20 cursor-pointer" onclick="navigatePage('next')">
+                <img src="./src/assets/images/right.png" alt="">
+            </a>
+        </section>
+    </div>
+    <div class="container my-10 mx-auto justify-center flex flex-wrap" id="generations">
 
-        </div>
+    </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-y-6 mx-2 md:mx-20"
-            id="pokemons">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-y-6 mx-2 md:mx-20"
+         id="pokemons">
+    </div>
+    <!-- FIRST SECTION -->
+    <div class="container flex mx-20 flex-col-reverse md:flex-row items-center justify-between" id="pokemon">
+        <div id="">
+            <!-- INFORMATIONS POKEMON -->
+            <ul class="text-start space-y-3 text-white text-2xl font-semibold">
+                <li id="poke-id"></li>
+                <li id="poke-name"></li>
+                <li id="gen-title"></li>
+                <li id="poke-types" class="flex items-center gap-5">Types :</li>
+                <li id="poke-weight"></li>
+            </ul>
         </div>
-        <!-- FIRST SECTION -->
-        <div class="container flex mx-20 flex-col-reverse md:flex-row items-center justify-between" id="pokemon">
-            <div id="">
-                <!-- INFORMATIONS POKEMON -->
-                <ul class="text-start space-y-3 text-white text-2xl font-semibold">
-                    <li id="poke-id"></li>
-                    <li id="poke-name"></li>
-                    <li id="gen-title"></li>
-                    <li id="poke-types" class="flex items-center gap-5">Types : </li>
-                    <li id="poke-weight"></li>
-                </ul>
-            </div>
-            <div id="section-right">
-                <!-- CAROUSEL POKEMON SHINY -->
-                <div id="controls-carousel" class="relative w-96" data-carousel="static">
-                    <!-- Carousel wrapper -->
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                            <img src="" id="poke-image"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="" id="poke-image-2"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button"
+        <div id="section-right">
+            <!-- CAROUSEL POKEMON SHINY -->
+            <div id="controls-carousel" class="relative w-96" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="" id="poke-image"
+                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                             alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="" id="poke-image-2"
+                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                             alt="...">
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button"
                             class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                             data-carousel-prev>
                             <span
-                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 1 1 5l4 4" />
+                                          stroke-width="2" d="M5 1 1 5l4 4"/>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </span>
-                        </button>
-                        <button type="button"
+                    </button>
+                    <button type="button"
                             class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                             data-carousel-next>
                             <span
-                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                                 <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 9 4-4-4-4" />
+                                          stroke-width="2" d="m1 9 4-4-4-4"/>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </span>
-                        </button>
-                    </div>
-
-                    <div id="section-header">
-                        <!-- CHAQUE TYPE DU POKEMON -->
-                        <div id="poke-types"></div>
-                    </div>
-                    <div id="generation">
-                        <!-- NOM DE LA GENERATION -->
-                        <h3 id="gen-title"></h3>
-                    </div>
+                    </button>
                 </div>
-            </div>
-        </div>
-        <!-- SECOND SECTION -->
-        <div class="container flex mx-20 justify-between items-center">
-            <div id="stats">
-                <ul id="stats-list"></ul>
-            </div>
-            <div>
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="evolution flex" id="pokemonEvolution">
-                
-            </div>
-        </div>
-    </main>
-    <!-- CLASS BONUS FOR TAILWIND -->
-    <div class="mx-auto px-5 hidden  rounded-full w-80 bg-secondary">
-        <div
-            class="max-w-xs cursor-pointer inline-block rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-            <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
-            <div>
-                <div class="my-6 flex items-center justify-between px-4 w-32 h-32">
-                    <p class="font-bold text-gray-500 w-10 h-10"></p>
+
+                <div id="section-header">
+                    <!-- CHAQUE TYPE DU POKEMON -->
+                    <div id="poke-types"></div>
+                </div>
+                <div id="generation">
+                    <!-- NOM DE LA GENERATION -->
+                    <h3 id="gen-title"></h3>
                 </div>
             </div>
         </div>
     </div>
+    <!-- SECOND SECTION -->
+    <div class="container flex mx-20 justify-between items-center">
+        <div id="stats">
+            <ul id="stats-list"></ul>
+        </div>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="evolution flex" id="pokemonEvolution">
 
-    <div class='hidden mx-auto  rounded-3xl shadow-xl w-20 h-20'>
-        <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
-            <img src="https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_QL75_UX380_CR0,1,380,562_.jpg"
-                width="375" height="200" class="rounded-t-3xl justify-center grid h-80 object-cover"
-                alt="movie.title" />
+        </div>
+    </div>
+</main>
+<!-- CLASS BONUS FOR TAILWIND -->
+<div class="mx-auto px-5 hidden  rounded-full w-80 bg-secondary">
+    <div
+            class="max-w-xs cursor-pointer inline-block rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+        <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product"/>
+        <div>
+            <div class="my-6 flex items-center justify-between px-4 w-32 h-32">
+                <p class="font-bold text-gray-500 w-10 h-10"></p>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div class="group p-6 grid z-10">
-                <a href='' class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 w-24 h-24">
-                </a>
-                <span class="text-slate-400 pt-2 font-semibold md:w-32 md:h-32">
+<div class='hidden mx-auto  rounded-3xl shadow-xl w-20 h-20'>
+    <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
+        <img src="https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_QL75_UX380_CR0,1,380,562_.jpg"
+             width="375" height="200" class="rounded-t-3xl justify-center grid h-80 object-cover"
+             alt="movie.title"/>
+
+        <div class="group p-6 grid z-10">
+            <a href='' class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 w-24 h-24">
+            </a>
+            <span class="text-slate-400 pt-2 font-semibold md:w-32 md:h-32">
                 </span>
-                <div class="h-28">
+            <div class="h-28">
                     <span class="line-clamp-4 py-2 text-sm font-light leading-relaxed">
                     </span>
-                </div>
-                <div class=" grid-cols-2 flex group justify-between md:h-24 md:w-24">
-                    <div class="font-black flex flex-col">
-                        <span class="text-yellow-500 text-xl"></span>
-                        <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 bg-pokeballRed">
+            </div>
+            <div class=" grid-cols-2 flex group justify-between md:h-24 md:w-24">
+                <div class="font-black flex flex-col">
+                    <span class="text-yellow-500 text-xl"></span>
+                    <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600 bg-pokeballRed">
                             8.8
                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                                 xmlns="http://www.w3.org/2000/svg">
 
-                                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
 
                                 <g id="SVGRepo_iconCarrier">
                                     <path
-                                        d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"
-                                        fill="#eab308" />
+                                            d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"
+                                            fill="#eab308"/>
                                 </g>
 
                             </svg>
                         </span>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <div class="h-7">
+                </div>
+                <div class="flex flex-col items-end">
+                    <div class="h-7">
                         <span class="text-3xl  font-bold  gap-x-2 text-slate-300">
                         </span>
                     </div>
@@ -250,7 +246,7 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="./src/assets/js/API/generation.js"></script>
         <script src="./src/assets/js/API/pokemon.js"></script>
         <script src="./src/assets/js/API/type.js"></script>
