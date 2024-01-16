@@ -55,7 +55,7 @@ function showPokemon(poke) {
 
     // ---- SECTION RIGHT ----
     let pokemonTitle = document.getElementById("poke-name");
-    pokemonTitle.textContent = `Nom du pokémon : ${poke.name.fr}`;
+    pokemonTitle.textContent = `${poke.name.fr}`;
 
     // let pokemonTypes = document.createElement("div");
     let pokemonTypes = document.getElementById("poke-types");
@@ -123,9 +123,7 @@ function showPokemon(poke) {
                     <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
                  <img
                      src="${pokeData.sprites.regular}"
-                     width="375"
-                     height="200"
-                    class="rounded-t-3xl justify-center grid h-80 object-cover"
+                    class="rounded-t-3xl justify-center grid h-56 object-cover"
                      alt="movie.title"
                    /> 
            
