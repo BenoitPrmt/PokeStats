@@ -98,7 +98,6 @@ function showPokemon(poke) {
     let imgShiny = document.getElementById("poke-image-2");
     imgShiny.setAttribute("src", poke.sprites.shiny);
 
-    console.log(poke);
 
     poke.resistances.forEach((element) => {
         if (element.multiplier < 1) {
@@ -119,24 +118,18 @@ function showPokemon(poke) {
 
                         evolImg.innerHTML = `
                         <a href="?pokemon=${pokeData.pokedexId}">
-                    <div class=' mx-auto bg-white rounded-3xl shadow-xl'>
-                    <div class="grid rounded-3xl max-w-[370px] shadow-sm bg-slate-100  flex-col">
+                    <div class="rounded-3xl shadow-sm bg-white flex-col max-w-[370px]">
                  <img
                      src="${pokeData.sprites.regular}"
-                    class="rounded-t-3xl justify-center grid h-56 object-cover"
-                     alt="movie.title"
+                    class="rounded-t-3xl h-32 sm:h-56 object-cover"
+                     alt="Evolution du pokemon"
                    /> 
            
                  <div class="group p-6 grid z-10">
-                   <a
-                     href=''
-                     class="group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2"
-                   >
-                   </a>
-                   <div class=" grid-cols-2 flex group justify-between">
+                   <div class="grid-cols-2 flex group justify-between">
                      <div class="font-black flex flex-col">
-                       <span class="text-yellow-500 text-xl">${pokeData.name.fr}</span>
-                       <span class="text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
+                       <span class="text-yellow-500 text-sm sm:text-xl">${pokeData.name.fr}</span>
+                       <span class=" text-xl sm:text-3xl flex gap-x-1 items-center group-hover:text-yellow-600">
                         ${poke.evolution[evol][evo].condition}
                         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
            
@@ -149,15 +142,11 @@ function showPokemon(poke) {
            </svg>
                        </span>
                      </div>
-                     <div class="flex flex-col items-end">
-                       <div class="h-7" />
-                       <span class="text-3xl  font-bold  gap-x-2 text-slate-300">
+                       <span class="block text-xl sm:text-3xl font-bold text-slate-300">
                          # ${pokeData.pokedexId}
                        </span>
-                     </div>
-                 </div>
                </div>
-               </div></a>
+               </a>
                     `;
                         let test = document.getElementById('pokemonEvolution');
                         test.appendChild(evolImg);

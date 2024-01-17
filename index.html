@@ -65,34 +65,34 @@
                 id="pokemon">
                 <div id="">
                     <!-- INFORMATIONS POKEMON -->
-                    <ul class="text-start space-y-3 text-primary text-2xl font-semibold">
+                    <ul class="text-center sm:text-start space-y-3 text-primary text-xl sm:text-2xl font-semibold">
                         <li id="poke-name"></li>
                         <li id="poke-id"></li>
                         <li id="gen-title"></li>
-                        <li id="poke-types" class="flex items-center gap-5">Types :</li>
+                        <li id="poke-types" class="flex items-center justify-center sm:justify-start gap-5">Types :</li>
                         <li id="poke-weight"></li>
                     </ul>
                 </div>
                 <div id="section-right">
                     <!-- CAROUSEL POKEMON SHINY -->
-                    <div id="controls-carousel" class="relative w-96" data-carousel="static">
+                    <div id="controls-carousel" class="relative w-80 sm:w-96" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                        <div class="relative overflow-hidden rounded-lg h-96">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                                 <img src="" id="poke-image"
                                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
+                                    alt="Pokemon standard">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="" id="poke-image-2"
                                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
+                                    alt="Pokemon shiny">
                             </div>
                             <!-- Slider controls -->
                             <button type="button"
-                                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                                class="absolute top-0 start-0 z-30 flex items-center justify-center -left-4 h-full px-4 cursor-pointer group focus:outline-none"
                                 data-carousel-prev>
                                 <span
                                     class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -106,7 +106,7 @@
                                 </span>
                             </button>
                             <button type="button"
-                                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                                class="absolute top-0 end-0 z-30 flex items-center justify-center -right-4 h-full px-4 cursor-pointer group focus:outline-none"
                                 data-carousel-next>
                                 <span
                                     class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -135,24 +135,24 @@
             <!-- SECOND SECTION -->
             <div class="flex flex-col gap-4 md:gap-0 md:flex-row justify-between items-center">
                 <div>
-                    <canvas id="myChart" width="400px" height="400px"></canvas>
+                    <canvas id="myChart" class="canva"></canvas>
                 </div>
-                <div class="evolution flex gap-3" id="pokemonEvolution">
+                <div class="evolution flex flex-col sm:flex-row gap-4" id="pokemonEvolution">
 
                 </div>
             </div>
         </section>
     </main>
     <!-- CLASS BONUS FOR TAILWIND -->
-    <div class="hidden px-5 rounded-full w-80 items-end"></div>
-    <div class="hidden max-w-xs rounded-lg p-2 shadow duration-150 hover:scale-105 hover:shadow-md"></div>
+    <div class="hidden px-5 w-80 items-end"></div>
+    <div class="hidden max-w-xs p-2 shadow duration-150 hover:scale-105 hover:shadow-md"></div>
     <img class="hidden w-full rounded-lg object-center" alt="product" />
     <div class="hidden my-6 px-4 w-32 h-32"></div>
     <div class="hidden font-bold text-gray-500 w-10 h-10"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20"></div>
-    <div class="hidden max-w-[370px] shadow-sm"></div>
+    <div class="hidden sm:max-w-[370px] sm:h-56 sm:text-3xl"></div>
     <div class="hidden rounded-t-3xl h-80 object-cover"></div>
-    <div class="hidden p-6 h-28 gap-x-2 text-slate-300"></div>
+    <div class="hidden p-6 h-28 gap-x-2 text-slate-300 min-w-[100px]"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20 font-light"></div>
     <a href="" class="hidden group-hover:text-cyan-700 sm:text-2xl line-clamp-2 w-24 h-24"></a>
     <div class="hidden text-slate-400 pt-2 md:w-32 md:h-32 line-clamp-4 py-2 text-sm leading-relaxed"></div>
