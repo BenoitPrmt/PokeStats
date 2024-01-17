@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -11,53 +11,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
-
-<style>
-    .pokeball:hover {
-        cursor: pointer;
-        animation: wiggle 1s ease-in-out;
-    }
-
-    .lien {
-        position: absolute;
-        display: inline-block;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-weight: bold;
-        font-size: 1.5rem;
-        padding: 1rem;
-    }
-
-    @media screen and (max-width: 900px) {
-        .lien {
-            font-size: 1rem;
-        }
-    }
-
-    @keyframes wiggle {
-        20% {
-            transform: rotate(7deg);
-        }
-
-        40% {
-            transform: rotate(-14deg);
-        }
-
-        60% {
-            transform: rotate(4deg);
-        }
-
-        80% {
-            transform: rotate(-2deg);
-        }
-
-        100% {
-            transform: rotate(0deg);
-        }
-    }
-</style>
 
 <body class="bg-primary min-h-screen">
     <header class="">
@@ -86,7 +39,7 @@
                 </div>
             </div>
             <!-- BTN NEXT && BTN PREVIOUS && BTN RANDOM -->
-            <section class="flex justify-between items-center mx-20 mt-5">
+            <section class="container mx-auto px-3 sm:px-0 flex justify-between items-center mt-5">
                 <a class="block w-20 h-20 cursor-pointer" id="return" onclick="navigatePage('previous')">
                     <img src="./src/assets/images/left.png" alt="">
                 </a>
@@ -98,16 +51,18 @@
                 </a>
             </section>
         </div>
-        <div class="container max-w-6xl mx-auto my-10 flex justify-between flex-wrap" id="generations">
+        <div class="container max-w-6xl mx-auto my-10 flex justify-center xl:justify-between flex-wrap"
+            id="generations">
 
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-y-6 mx-2 md:mx-20"
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 justify-center gap-y-6 mx-2 md:mx-20"
             id="pokemons">
         </div>
         <!-- FIRST SECTION -->
         <section class="container max-w-6xl mx-auto bg-slate-50 p-4 rounded-lg shadow-sm">
-            <div class="flex flex-col-reverse gap-4 md:gap-0 md:flex-row items-center justify-between mb-10" id="pokemon">
+            <div class="flex flex-col-reverse gap-4 md:gap-0 md:flex-row items-center justify-between mb-10"
+                id="pokemon">
                 <div id="">
                     <!-- INFORMATIONS POKEMON -->
                     <ul class="text-start space-y-3 text-primary text-2xl font-semibold">
@@ -141,8 +96,9 @@
                                 data-carousel-prev>
                                 <span
                                     class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 6 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 1 1 5l4 4" />
                                     </svg>
@@ -154,8 +110,9 @@
                                 data-carousel-next>
                                 <span
                                     class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <svg class="w-4 h-4 text-primary dark:text-gray-800 rtl:rotate-180"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 6 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
@@ -188,27 +145,27 @@
     </main>
     <!-- CLASS BONUS FOR TAILWIND -->
     <div class="hidden px-5 rounded-full w-80 items-end"></div>
-    <div class="hidden max-w-xs cursor-pointer rounded-lg p-2 shadow duration-150 hover:scale-105 hover:shadow-md"></div>
-    <img class="hidden w-full rounded-lg object-cover object-center" alt="product" />
+    <div class="hidden max-w-xs rounded-lg p-2 shadow duration-150 hover:scale-105 hover:shadow-md"></div>
+    <img class="hidden w-full rounded-lg object-center" alt="product" />
     <div class="hidden my-6 px-4 w-32 h-32"></div>
     <div class="hidden font-bold text-gray-500 w-10 h-10"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20"></div>
-    <div class="hidden rounded-3xl max-w-[370px] shadow-sm"></div>
+    <div class="hidden max-w-[370px] shadow-sm"></div>
     <div class="hidden rounded-t-3xl h-80 object-cover"></div>
-    <div class="hidden p-6 z-10 h-28 gap-x-2 text-slate-300"></div>
+    <div class="hidden p-6 h-28 gap-x-2 text-slate-300"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20 font-light"></div>
-    <a href="" class="hidden group-hover:text-cyan-700 font-bold sm:text-2xl line-clamp-2 w-24 h-24"></a>
-    <div class="hidden text-slate-400 pt-2 font-semibold md:w-32 md:h-32line-clamp-4 py-2 text-sm leading-relaxed"></div>
-    <div class="hidden grid-cols-2 group md:h-24 md:w-24 font-black text-yellow-500 text-xl"></div>
-    <div class="hidden text-3xl gap-x-1 group-hover:text-yellow-600 bg-pokeballRed items-end h-7"></div>
+    <a href="" class="hidden group-hover:text-cyan-700 sm:text-2xl line-clamp-2 w-24 h-24"></a>
+    <div class="hidden text-slate-400 pt-2 md:w-32 md:h-32 line-clamp-4 py-2 text-sm leading-relaxed"></div>
+    <div class="hidden group md:h-24 md:w-24 font-black text-yellow-500"></div>
+    <div class="hidden text-3xl gap-x-1 group-hover:text-yellow-600 bg-pokeballRed h-7"></div>
 
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-            <script src="./src/assets/js/API/generation.js"></script>
-            <script src="./src/assets/js/API/pokemon.js"></script>
-            <script src="./src/assets/js/API/type.js"></script>
-            <script src="script.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="./src/assets/js/API/generation.js"></script>
+    <script src="./src/assets/js/API/pokemon.js"></script>
+    <script src="./src/assets/js/API/type.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 
 </html>

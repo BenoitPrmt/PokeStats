@@ -2,3 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS */
+.pokeball:hover {
+    cursor: pointer;
+    animation: wiggle 1s ease-in-out;
+}
+
+.lien {
+    position: absolute;
+    display: inline-block;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+    .lien {
+        font-size: 1rem;
+    }
+}
+
+@keyframes wiggle {
+    20% {
+        transform: rotate(7deg);
+    }
+
+    40% {
+        transform: rotate(-14deg);
+    }
+
+    60% {
+        transform: rotate(4deg);
+    }
+
+    80% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
