@@ -60,9 +60,9 @@ if (generationId === null) {
 
 function navigatePage(direction) {
     if (direction === "previous" && pokemonId > 1) {
-        getPokemonPage(parseInt(pokemonId)-1)
+        getPokemonPage(parseInt(pokemonId) - 1)
     } else if (direction === "next" && pokemonId < 1017) {
-        getPokemonPage(parseInt(pokemonId)+1)
+        getPokemonPage(parseInt(pokemonId) + 1)
     } else {
         getPokemonPage(pokemonId)
     }

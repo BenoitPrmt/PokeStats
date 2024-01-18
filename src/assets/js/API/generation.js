@@ -42,12 +42,13 @@ function showPokemons(pokemonsList, gen, add_to_session) {
         if (add_to_session) {
             pokemons.push({
                 pokedexId: poke.pokedexId,
-                name: { fr: poke.name.fr },
-                sprites: { regular: poke.sprites.regular, shiny: poke.sprites.shiny }
+                name: {fr: poke.name.fr},
+                sprites: {regular: poke.sprites.regular, shiny: poke.sprites.shiny}
             })
         }
         pokemonsSection.appendChild(pokeEle)
-    };
+    }
+
     if (add_to_session) localStorage.setItem("gen" + gen, JSON.stringify(pokemons));
 }
 

@@ -86,8 +86,6 @@ function showPokemon(poke) {
 
     // STATS
     makeStatsGraph(poke) // Create the radar graph
-
-
     // ---- END SECTION RIGHT ----
 
     // OTHER DATA
@@ -169,24 +167,6 @@ async function getPokemon(poke_id) {
     }
 
     return pokemons.filter(poke => poke.pokedexId == poke_id)[0];
-
-    // try {
-    //     const pokeSession = localStorage.getItem(poke_id);
-
-    //     const response = await fetch(
-    //         "https://tyradex.tech/api/v1/pokemon/" + poke_id,
-    //         {
-    //             method: "GET",
-    //             headers: headers,
-    //         }
-    //     );
-    //     const data = await response.json();
-    //     if (!pokeSession) {
-    //         localStorage.setItem(poke_id, JSON.stringify(data));
-    //     }
-    // } catch (error) {
-    //     error;
-    // }
 }
 
 async function getAllPokemons() {
