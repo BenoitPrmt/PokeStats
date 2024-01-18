@@ -71,9 +71,11 @@ function showPokemonsByType(type) {
             let pokemonEle = document.createElement("a");
             pokemonEle.classList.add("card");
             pokemonEle.setAttribute("href", "?pokemon=" + pokemon.pokedexId);
+            pokemonEle.setAttribute('title', 'pokemon')
 
             let pokemonImage = document.createElement("img");
             pokemonImage.setAttribute("src", pokemon.sprite);
+            pokemonImage.setAttribute("alt", pokemon.name);
 
             let pokemonName = document.createElement("h3");
             pokemonName.innerHTML = pokemon.name;

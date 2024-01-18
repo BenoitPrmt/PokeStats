@@ -117,7 +117,7 @@ function showPokemon(poke) {
                         let evolImg = document.createElement('div');
 
                         evolImg.innerHTML = `
-                        <a href="?pokemon=${pokeData.pokedexId}">
+                        <a href="?pokemon=${pokeData.pokedexId}" title="pokemon">
                     <div class="rounded-3xl shadow-sm bg-white flex-col max-w-[370px]">
                  <img
                      src="${pokeData.sprites.regular}"

@@ -15,8 +15,8 @@
 
 <body class="bg-primary min-h-screen">
     <header class="">
-        <a href="/" class="flex justify-center" id="logo">
-            <img src="./src/assets/images/pokestats.png" alt="PokeStats" class="w-auto h-16 mt-5">
+        <a href="/" class="flex justify-center" id="logo" title="Logo su site web">
+            <img src="./src/assets/images/pokestats.png" alt="Logo du site PokeStats" class="w-auto h-16 mt-5">
         </a>
         <p class="text-center text-white text-xl py-4">Séléctionnez une génération pour voir les pokémons !</p>
     </header>
@@ -41,14 +41,14 @@
             </div>
             <!-- BTN NEXT && BTN PREVIOUS && BTN RANDOM -->
             <section class="container mx-auto px-3 sm:px-0 flex justify-between items-center mt-5">
-                <a class="block w-20 h-20 cursor-pointer" id="return" onclick="navigatePage('previous')">
-                    <img src="./src/assets/images/left.png" alt="">
+                <a class="block w-20 h-20 cursor-pointer" id="return" onclick="navigatePage('previous')" title="back">
+                    <img src="./src/assets/images/left.png" alt="back">
                 </a>
                 <a class="block w-20 h-20 cursor-pointer" onclick="getRandomPokemon(event)">
-                    <img src="./src/assets/images/random.png" alt="">
+                    <img src="./src/assets/images/random.png" alt="Generate random pokemon">
                 </a>
                 <a class="bolck w-20 h-20 cursor-pointer" onclick="navigatePage('next')">
-                    <img src="./src/assets/images/right.png" alt="">
+                    <img src="./src/assets/images/right.png" alt="next">
                 </a>
             </section>
         </div>
@@ -155,7 +155,7 @@
     <div class="hidden rounded-t-3xl h-80 object-cover"></div>
     <div class="hidden p-6 h-28 gap-x-2 text-slate-300 min-w-[100px]"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20 font-light"></div>
-    <a href="" class="hidden group-hover:text-cyan-700 sm:text-2xl line-clamp-2 w-24 h-24"></a>
+    <a href="" class="hidden group-hover:text-cyan-700 sm:text-2xl line-clamp-2 w-24 h-24" title="test"></a>
     <div class="hidden text-slate-400 pt-2 md:w-32 md:h-32 line-clamp-4 py-2 text-sm leading-relaxed"></div>
     <div class="hidden group md:h-24 md:w-24 font-black text-yellow-500"></div>
     <div class="hidden text-3xl gap-x-1 group-hover:text-yellow-600 bg-pokeballRed h-7"></div>

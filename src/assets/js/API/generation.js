@@ -8,7 +8,7 @@ function showGenerations(max) {
     for (let i = 1; i < max + 1; i++) {
         genEle.innerHTML += `
         <div class ='relative pokeball'>
-            <img src="./src/assets/images/pokeball.png" alt="" class='w-20 h-20 md:w-32 md:h-32'>
+            <img src="./src/assets/images/pokeball.png" alt="pokeball genration de pokemon" class='w-20 h-20 md:w-32 md:h-32'>
             <a href="?gen=${i}" id="${i}" class="lien">${i}</a>
         </div>
         `
@@ -23,12 +23,13 @@ function showPokemons(pokemonsList, gen, add_to_session) {
 
     for (poke of pokemonsList) {
         let pokeEle = document.createElement("a");
-        pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId)
+        pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId);
+        pokeEle.setAttribute("title", `${poke.name.fr}`)
 
         pokeEle.innerHTML = `
         <div class="mx-auto px-5">
           <div class="cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-            <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="product" />
+            <img class="w-full rounded-lg object-cover object-center" src="${poke.sprites.regular}" alt="pokemon" />
             <div>
               <div class="my-6 flex items-center justify-between px-4">
                 <p class="font-bold text-center text-gray-500">${poke.name.fr}</p>
