@@ -61,9 +61,8 @@
             id="pokemons">
         </div>
         <!-- FIRST SECTION -->
-        <section class="container max-w-6xl mx-auto bg-slate-50 p-4 rounded-lg shadow-sm" id="pokeSection" hidden>
-            <div class="flex flex-col-reverse gap-4 md:gap-0 md:flex-row items-center justify-between mb-10"
-                id="pokemon">
+        <section class="container max-w-6xl mx-auto bg-slate-50 p-4 rounded-lg shadow-sm" id="pokemon" hidden>
+            <div class="flex flex-col-reverse gap-4 md:gap-0 md:flex-row items-center justify-between mb-10">
                 <div id="">
                     <!-- INFORMATIONS POKEMON -->
                     <ul class="text-center sm:text-start space-y-3 text-primary text-xl sm:text-2xl font-semibold">
@@ -138,7 +137,7 @@
                 <div>
                     <canvas id="myChart" class="canva"></canvas>
                 </div>
-                <div class="evolution flex flex-col sm:flex-row gap-4" id="pokemonEvolution">
+                <div class="evolution flex flex-wrap flex-col sm:flex-row gap-4" id="pokemonEvolution">
 
                 </div>
             </div>
@@ -152,7 +151,7 @@
     <div class="hidden font-bold text-gray-500 w-10 h-10"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20"></div>
     <div class="hidden sm:max-w-[370px] sm:h-56 sm:text-3xl"></div>
-    <div class="hidden rounded-t-3xl h-80 object-cover"></div>
+    <div class="hidden rounded-t-3xl h-80 object-cover w-[370px]"></div>
     <div class="hidden p-6 h-28 gap-x-2 text-slate-300 min-w-[100px]"></div>
     <div class="hidden rounded-3xl shadow-xl w-20 h-20 font-light"></div>
     <a href="" class="hidden group-hover:text-cyan-700 sm:text-2xl line-clamp-2 w-24 h-24" title="test"></a>

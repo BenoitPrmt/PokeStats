@@ -35,7 +35,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get("pokemon");
 const generationId = urlParams.get("gen");
 
-let pokeSection = document.getElementById("pokeSection");
+let pokeSection = document.getElementById("pokemon");
 let searchSection = document.getElementById("search-section");
 
 showGenerations(9)
@@ -45,17 +45,17 @@ if (generationId === null) {
         pokeSection.style.display = "none";
         searchSection.style.display = "block";
     } else {
-        pokeSection.style.display = "block";
+        pokeSection.hidden = false;
         searchSection.style.display = "none";
 
 
-        showPokemon(pokemons.filter(poke => poke.pokedexId === pokemonId)[0]);
+        showPokemon(pokemons.filter(poke => poke.pokedexId == pokemonId)[0]);
     }
 } else {
     pokeSection.style.display = "none";
 
     // get pokemons by generation in "pokemons" localstorage
-    showPokemons(pokemons.filter(poke => poke.generation === generationId), generationId, false);
+    showPokemons(pokemons.filter(poke => poke.generation == generationId), generationId, false);
 }
 
 function navigatePage(direction) {
