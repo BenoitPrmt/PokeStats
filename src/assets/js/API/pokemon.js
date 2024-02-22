@@ -179,6 +179,6 @@ async function getAllPokemons() {
         data = data.filter(poke => poke.pokedexId !== 0)
         return data;
     } catch (error) {
-        error;
+        return error;
     }
 }
