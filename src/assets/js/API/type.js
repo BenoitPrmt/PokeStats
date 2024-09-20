@@ -49,7 +49,7 @@ function fetchPokemons(type) {
             let pokemons = [];
             for (let pokemon of data) {
                 pokemons.push({
-                    pokedexId: pokemon.pokedexId,
+                    pokedex_id: pokemon.pokedex_id,
                     name: pokemon.name,
                     sprite: pokemon.sprite,
                 });
@@ -70,7 +70,7 @@ function showPokemonsByType(type) {
         for (let pokemon of pokemonsSession) {
             let pokemonEle = document.createElement("a");
             pokemonEle.classList.add("card");
-            pokemonEle.setAttribute("href", "?pokemon=" + pokemon.pokedexId);
+            pokemonEle.setAttribute("href", "?pokemon=" + pokemon.pokedex_id);
             pokemonEle.setAttribute('title', 'pokemon')
 
             let pokemonImage = document.createElement("img");

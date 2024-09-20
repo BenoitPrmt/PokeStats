@@ -23,7 +23,7 @@ function showPokemons(pokemonsList, gen, add_to_session) {
 
     for (poke of pokemonsList) {
         let pokeEle = document.createElement("a");
-        pokeEle.setAttribute("href", "?pokemon=" + poke.pokedexId);
+        pokeEle.setAttribute("href", "?pokemon=" + poke.pokedex_id);
         pokeEle.setAttribute("title", `${poke.name.fr}`)
 
         pokeEle.innerHTML = `
@@ -41,7 +41,7 @@ function showPokemons(pokemonsList, gen, add_to_session) {
 
         if (add_to_session) {
             pokemons.push({
-                pokedexId: poke.pokedexId,
+                pokedex_id: poke.pokedex_id,
                 name: {fr: poke.name.fr},
                 sprites: {regular: poke.sprites.regular, shiny: poke.sprites.shiny}
             })

@@ -49,7 +49,7 @@ if (generationId === null) {
         searchSection.style.display = "none";
 
 
-        showPokemon(pokemons.filter(poke => poke.pokedexId == pokemonId)[0]);
+        showPokemon(pokemons.filter(poke => poke.pokedex_id == pokemonId)[0]);
     }
 } else {
     pokeSection.style.display = "none";

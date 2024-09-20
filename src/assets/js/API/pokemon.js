@@ -82,7 +82,7 @@ function showPokemon(poke) {
 
     // id
     let pokemonId = document.getElementById("poke-id");
-    pokemonId.textContent = `N° : ${poke.pokedexId}`;
+    pokemonId.textContent = `N° : ${poke.pokedex_id}`;
 
     // STATS
     makeStatsGraph(poke) // Create the radar graph
@@ -110,12 +110,12 @@ function showPokemon(poke) {
     for (let evol in poke.evolution) {
         if (poke.evolution[evol] != null && evol !== "mega") {
             for (let evo in poke.evolution[evol]) {
-                getPokemon(poke.evolution[evol][evo].pokedexId, true).then(
+                getPokemon(poke.evolution[evol][evo].pokedex_id, true).then(
                     (pokeData) => {
                         let evolImg = document.createElement('div');
 
                         evolImg.innerHTML = `
-                        <a href="?pokemon=${pokeData.pokedexId}" title="pokemon">
+                        <a href="?pokemon=${pokeData.pokedex_id}" title="pokemon">
                     <div class="rounded-3xl shadow-sm bg-white flex-col w-[370px]">
                  <img
                      src="${pokeData.sprites.regular}"
@@ -139,7 +139,7 @@ function showPokemon(poke) {
                        
                      </div>
                        <span class="block text-xl sm:text-3xl font-bold text-slate-300">
-                         # ${pokeData.pokedexId}
+                         # ${pokeData.pokedex_id}
                        </span>
                </div>
                </a>
@@ -166,7 +166,7 @@ async function getPokemon(poke_id) {
         pokemons = JSON.parse(pokeSession);
     }
 
-    return pokemons.filter(poke => poke.pokedexId == poke_id)[0];
+    return pokemons.filter(poke => poke.pokedex_id === poke_id)[0];
 }
 
 async function getAllPokemons() {
@@ -176,7 +176,7 @@ async function getAllPokemons() {
             headers: headers,
         });
         let data = await response.json();
-        data = data.filter(poke => poke.pokedexId !== 0)
+        data = data.filter(poke => poke.pokedex_id !== 0)
         return data;
     } catch (error) {
         return error;
