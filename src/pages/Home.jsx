@@ -1,7 +1,6 @@
-import './App.css'
 import {useParams} from "react-router-dom";
 
-function App() {
+function Home() {
   const { id } = useParams();
 
   return (
@@ -9,4 +8,4 @@ function App() {
   )
 }
 
-export default App
+export default Home

@@ -5,20 +5,21 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import App from "./App.jsx";
+import Pokemon from "./pages/Pokemon.jsx";
+import Home from "./pages/Home.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <Home/>,
     },
     {
         path: "/gen/:id",
-        element: <App/>,
+        element: <Pokemon/>,
     },
     {
         path: "/pokemon/:id",
-        element: <App/>,
+        element: <Pokemon/>,
     },
 ]);
 
