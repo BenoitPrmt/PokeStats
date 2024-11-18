@@ -4,7 +4,7 @@ function Home() {
   const { id } = useParams();
 
   return (
-  <h1 className="text-center">Pokestats {id}</h1>
+    <h1 className="text-center">Pokestats {id}</h1>
   )
 }
 
