@@ -54,7 +54,7 @@ function showPokemons(pokemonsList, gen, add_to_session) {
 
 async function getGeneration(gen) {
     try {
-        const response = await fetch("https://tyradex.tech/api/v1/gen/" + gen, {
+        const response = await fetch("https://tyradex.app/api/v1/gen/" + gen, {
             method: "GET",
             headers: headers,
         });

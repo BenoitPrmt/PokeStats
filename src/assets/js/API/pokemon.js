@@ -171,7 +171,7 @@ async function getPokemon(poke_id) {
 
 async function getAllPokemons() {
     try {
-        const response = await fetch("https://tyradex.tech/api/v1/pokemon", {
+        const response = await fetch("https://tyradex.app/api/v1/pokemon", {
             method: "GET",
             headers: headers,
         });
