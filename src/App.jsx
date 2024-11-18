@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {useParams} from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { id } = useParams();
 
   return (
-  <h1 className="text-center">Pokestats</h1>
+  <h1 className="text-center">Pokestats {id}</h1>
   )
 }
 
