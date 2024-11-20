@@ -1,7 +1,7 @@
 export async function getPokemonById(pokemonId) {
   return fetch("https://tyradex.app/api/v1/pokemon/" + pokemonId)
     .then((res) => res.json())
-    .then((data) => data.results);
+    .then((data) => data);
 }
 
 export async function getPokemonsByGeneration(generation) {
