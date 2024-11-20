@@ -5,7 +5,7 @@ function Navbar() {
         <div tabIndex={0} role="button" className=" lg:hidden">
           <img
             src="https://img.icons8.com/?size=100&id=63311&format=png&color=000000"
-            className="size-14"
+            className="size-14 anim-pokeBall"
           />
         </div>
         <ul
@@ -28,7 +28,10 @@ function Navbar() {
           <ul className="flex gap-1">
             {Array.from({length: 9}).map((_, idx) => (
               <li key={idx}>
-                <a className="cursor-pointer" href={`/gen/${idx+1}`}>
+                <a
+                  className="cursor-pointer tooltip hover:tooltip-open tooltip-bottom tooltip-gradientR"
+                  data-tip={"Génération " + (idx+1)}
+                  href={`/gen/${idx+1}`}>
                   <img
                     src="https://img.icons8.com/?size=100&id=63311&format=png&color=000000"
                     className="size-16"
