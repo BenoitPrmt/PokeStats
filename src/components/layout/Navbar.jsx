@@ -13,7 +13,7 @@ function Navbar() {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-44 p-2 shadow">
           {Array.from({length: 9}).map((_, idx) => (
             <li key={idx}>
-              <a className="cursor-pointer">
+              <a className="cursor-pointer" href={`/gen/${idx+1}`}>
                 <img
                   src="https://img.icons8.com/?size=100&id=63311&format=png&color=000000"
                   className="size-14"
@@ -28,7 +28,7 @@ function Navbar() {
           <ul className="flex gap-1">
             {Array.from({length: 9}).map((_, idx) => (
               <li key={idx}>
-                <a className="cursor-pointer">
+                <a className="cursor-pointer" href={`/gen/${idx+1}`}>
                   <img
                     src="https://img.icons8.com/?size=100&id=aAtapxcSmd5w&format=png&color=FFFFFF"
                     className="size-14"
