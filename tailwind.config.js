@@ -8,7 +8,10 @@ export default {
     extend: {
       colors: {
         primaryW: "#FDFBFE",
-        primaryB: "#5cb9ff"
+        primaryB: "#5cb9ff",
+        gradientR: "#ee1515",
+        gradientB: "#222224",
+        gradientW: "#f0f0f0",
       },
       container: {
         center: true,
