@@ -6,15 +6,15 @@ function Home() {
   const {id} = useParams();
 
   return (
-    <main className="flex justify-between items-center lg:h-[calc(100dvh-136px)]">
-      <section className="flex justify-between items-center w-full">
+    <main className="flex justify-between items-center min-h-[calc(100dvh-144px)]">
+      <section className="flex flex-col-reverse lg:flex-row justify-between items-center w-full">
         <div>
           <h1
-            className="bg-gradient-to-r from-gradientB via-gradientR bg-clip-text text-3xl font-semibold
-          text-transparent sm:text-7xl">Pokestats
+            className="hidden lg:block text-center md:text-start bg-gradient-to-r from-gradientB via-gradientR bg-clip-text text-5xl font-semibold
+          text-transparent sm:text-7xl tracking-wide">Pokestats
           </h1>
-          <h2 className="text-4xl my-5">Pokédex intégrant les 9 générations de Pokémon</h2>
-          <h3 className="text-3xl">
+          <h2 className="text-center md:text-start text-2xl md:text-3xl my-5 tracking-wide">Pokédex intégrant les 9 générations de Pokémon</h2>
+          <h3 className="text-xl md:text-3xl text-center md:text-start">
             By {contributorsModel.map((item, index) => (
             <span
               key={index}
@@ -30,7 +30,17 @@ function Home() {
           </h3>
         </div>
 
-        <img className="img size-96 rounded-full shadow-md"/>
+        <div>
+          <h1
+            className="block lg:hidden pb-14 text-center md:text-start bg-gradient-to-r from-gradientB via-gradientR bg-clip-text text-5xl font-semibold
+          text-transparent sm:text-7xl tracking-wide">Pokestats
+          </h1>
+          <img
+            className="img size-64 sm:size-72 md:size-96 rounded-full shadow-md"
+            alt=""
+          />
+        </div>
+
       </section>
 
     </main>
