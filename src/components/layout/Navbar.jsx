@@ -24,14 +24,14 @@ function Navbar() {
             </li>
           ))}
         </ul>
-        <nav className="hidden lg:block px-6 py-2 rounded-3xl bg-gray-900">
+        <nav className="hidden lg:block px-6 py-2 rounded-3xl">
           <ul className="flex gap-1">
             {Array.from({length: 9}).map((_, idx) => (
               <li key={idx}>
                 <a className="cursor-pointer" href={`/gen/${idx+1}`}>
                   <img
-                    src="https://img.icons8.com/?size=100&id=aAtapxcSmd5w&format=png&color=FFFFFF"
-                    className="size-14"
+                    src="https://img.icons8.com/?size=100&id=63311&format=png&color=000000"
+                    className="size-16"
                     alt={`Icon ${idx}`}
                   />
                 </a>
