@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .effect-blur {
+
+    }
+
+    .img{
+        background-image: url("https://i.pinimg.com/736x/2b/1c/49/2b1c49a5be6471b62adc76f8c4817b5f.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+}
