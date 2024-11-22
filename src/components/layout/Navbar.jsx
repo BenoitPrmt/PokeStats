@@ -40,7 +40,7 @@ const Navbar = () => {
           ))}
         </ul>
         {isMenuOpen ?
-          <ul className="flex flex-col gap-1 absolute transform -translate-y-1/2 border top-1/2 left-2 w-52 lg:hidden rounded-3xl glass">
+          <ul className={`flex flex-col gap-1 absolute transform -translate-y-1/2 border top-1/2 left-2 w-52 lg:hidden rounded-3xl glass`}>
             {Array.from({length: 9}).map((_, idx) => (
               <li key={idx} className="rounde-3xl hover:scale-105">
                 <a
