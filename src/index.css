@@ -31,3 +31,10 @@
     backdrop-filter: blur(7px);
     border: 1px solid rgba(255,255,255,0.25);
 }
+.card-pokemon{
+        background-image: url("https://i.pinimg.com/736x/31/52/b1/3152b151b84a7016d0d150b5780944eb.jpg");
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        opacity: 0.2;
+}
