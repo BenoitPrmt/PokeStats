@@ -1,14 +1,15 @@
 const cardPokemon = ({pokemon}) => {
+  console.log(pokemon.types);
   return (
     <div
       key={pokemon.pokedex_id}
-      className="text-center shadow relative h-52 rounded-xl">
+      className="text-center shadow relative h-52 rounded-xl group">
       <div
         className="bg-gradient-to-r opacity-30 from-emerald-500 to-emerald-900 absolute h-full w-full rounded-xl"></div>
       <img
         src={pokemon.sprites.regular}
         alt=""
-        className="absolute size-44 z-10 -top-10 transform -translate-x-1/2 -translate-y-1/2 rounded-full left-1/2"/>
+        className="absolute size-44 z-10 -top-10 transform -translate-x-1/2 -translate-y-1/2 rounded-full left-1/2 group-hover:scale-110 group-hover:-translate-y-2/3 transition duration-300"/>
       <div className="grid place-content-center h-full">
         <h2 className="my-5 capitalize tracking-wide z-20 text-xl font-medium text-white">{pokemon.name.fr}</h2>
         <a
