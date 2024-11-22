@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import pokeballLogo from "../../../src/assets/images/pokeball.webp";
+import pokeballLogo from "../../../assets/images/pokeball.webp";
+import NavLinkSm from "./navLinkSm.jsx";
+import NavLinkLg from "./navLinkLg.jsx";
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,44 +24,20 @@ const Navbar = () => {
 
       <nav className="transition-all duration-1000">
         <ul className="hidden lg:flex px-6 py-2 rounded-3xl">
-          {Array.from({length: 9}).map((_, idx) => (
-            <li key={idx}>
-              <a
-                className="cursor-pointer tooltip hover:tooltip-open tooltip-bottom tooltip-gradientR"
-                data-tip={"Génération " + (idx + 1)}
-                href={`/gen/${idx + 1}`}
-              >
-                <img
-                  src={pokeballLogo}
-                  className="size-16"
-                  alt={`Icon ${idx}`}
-                />
-              </a>
-            </li>
+          {Array.from({length: 9}).map((_, id) => (
+            <NavLinkLg id={id}/>
           ))}
         </ul>
         {isMenuOpen ?
           <ul className={`flex flex-col gap-1 fixed z-50 top-1/2 transform -translate-y-1/2 border left-2 w-52 lg:hidden rounded-3xl glass`}>
             {Array.from({length: 9}).map((_, idx) => (
-              <li key={idx} className="rounde-3xl hover:scale-105">
-                <a
-                  className="cursor-pointer flex items-center gap-2 tracking-wide"
-                  href={`/gen/${idx + 1}`}
-                >
-                  <img
-                    src={pokeballLogo}
-                    className="size-16"
-                    alt={`Icon ${idx}`}
-                  />
-                  Génération {idx + 1}
-                </a>
-              </li>
+              <NavLinkSm id={idx}/>
             ))}
           </ul> : ''}
       </nav>
 
       <div>
-        <a href="/">
+        <a href="/public">
           <img
             src="https://img.icons8.com/?size=100&id=2908&format=png&color=000000"
             className="size-14"

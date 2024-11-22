@@ -8,7 +8,7 @@ import "./index.css";
 import Pokemon from "./pages/Pokemon.jsx";
 import Home from "./pages/Home.jsx";
 import Gen from "./pages/Gen.jsx";
-import Navbar from "./components/layout/Navbar.jsx";
+import Navbar from "./components/layout/nav/navbar.jsx";
 
 const router = createBrowserRouter([
     {

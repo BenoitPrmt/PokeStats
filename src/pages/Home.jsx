@@ -1,4 +1,4 @@
-import contributorsModel from "../models.js";
+import contributorsModel from "../models/contributors.js";
 import {useParams} from "react-router-dom";
 import Pokemon from "./Pokemon.jsx";
 
