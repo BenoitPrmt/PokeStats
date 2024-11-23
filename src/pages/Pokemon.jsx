@@ -39,8 +39,8 @@ function Pokemon() {
 
   return (
     <main className="">
-      <div className="grid p-4 grid-cols-2  min-h-[calc(100dvh-144px)] container shadow rounded-lg">
-        <div className="">
+      <div className="grid p-4 grid-cols-2  min-h-[calc(100dvh-144px)]">
+        <div className="pl-20">
           <div className="flex items-center gap-10 justify-between">
             <h1
               className="text-6xl font-semibold text-gray-900 tracking-tight duration-1000"
@@ -108,8 +108,14 @@ function Pokemon() {
             src={pokemon.sprites.regular}
             alt={pokemon.name.fr}
             className="size-[450px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            onMouseEnter={(e) => (e.currentTarget.src = pokemon.sprites.shiny)}
-            onMouseLeave={(e) => (e.currentTarget.src = pokemon.sprites.regular)}
+            onMouseEnter={(e) => {
+              if (pokemon.sprites.shiny) {
+                e.currentTarget.src = pokemon.sprites.shiny;
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.src = pokemon.sprites.regular;
+            }}
           />
 
         </div>
