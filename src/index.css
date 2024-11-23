@@ -18,6 +18,9 @@
 .anim-pokeBall {
     animation: pokeball 1.5s infinite;
 }
+.right{
+    clip-path: polygon(100% 0%, 100% 100%, 7% 100%);
+}
 @keyframes pokeball {
     from, to { transform: scale(1, 1); }
     25% { transform: scale(0.9, 1.1); }
