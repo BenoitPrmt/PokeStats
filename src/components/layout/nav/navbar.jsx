@@ -12,7 +12,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="flex justify-between items-center py-8 px-3 sm:px-0">
+    <header className="container flex justify-between items-center py-8 px-3 sm:px-0">
 
       <div role="button" className="lg:hidden" onClick={toggleMenu}>
         <img

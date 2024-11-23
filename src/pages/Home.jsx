@@ -6,7 +6,7 @@ function Home() {
   const {id} = useParams();
 
   return (
-    <main className="flex justify-between items-center min-h-[calc(100dvh-144px)]">
+    <main className="container flex justify-between items-center min-h-[calc(100dvh-144px)]">
       <section className="flex flex-col-reverse lg:flex-row justify-between items-center w-full">
         <div>
           <h1

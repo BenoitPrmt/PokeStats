@@ -38,7 +38,7 @@ function Gen() {
   }
 
   return (
-    <main className="py-20">
+    <main className="py-20 container">
       <Title content={"Bienvenue à la " + id + "ème génération"}/>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 px-8 lg:px-0 lg:grid-cols-4 gap-x-24 gap-y-48 py-52">
