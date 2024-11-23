@@ -1,11 +1,18 @@
+import pokemonTypes from "../models/pokemonTypes.js";
+
 const cardPokemon = ({pokemon}) => {
-  console.log(pokemon.types);
+  console.log(pokemon.types[0].name);
   return (
     <div
       key={pokemon.pokedex_id}
       className="text-center shadow relative h-52 rounded-xl group">
       <div
-        className="bg-gradient-to-r opacity-30 from-emerald-500 to-emerald-900 absolute h-full w-full rounded-xl"></div>
+        className={`bg-gradient-to-r opacity-30 absolute h-full w-full rounded-xl
+          ${pokemonTypes.some((item) => item.type === pokemon.types[0].name)
+          ? `from-${pokemon.types[0].name.toLowerCase() + "Primaire"} via-${pokemon.types[0].name.toLowerCase() + "Secondaire"}`
+          : "bg-blue-700"}`}>
+      </div>
+
       <img
         src={pokemon.sprites.regular}
         alt=""
