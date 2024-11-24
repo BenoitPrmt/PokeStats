@@ -2,12 +2,12 @@ import {useParams} from "react-router-dom";
 import {getPokemonById} from "../api/pokemons.js";
 import {useEffect, useState} from "react";
 import log from "eslint-plugin-react/lib/util/log.js";
+import pokemonTypes from "../models/pokemonTypes.js";
 
 function Pokemon() {
 
   const {id} = useParams();
   const [pokemon, setPokemon] = useState([]);
-  console.log(pokemon)
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -28,6 +28,8 @@ function Pokemon() {
 
     fetchPokemon();
   }, [id]);
+
+
 
   if (loading) {
     return <p>Chargement...</p>;
@@ -75,7 +77,7 @@ function Pokemon() {
                 <span className="size-4 rounded-full bg-green-400"></span>
                 <h2 className="uppercase tracking-wide text-2xl font-semibold mb-3">forces</h2>
               </div>
-              <ul className="pl-4">
+              <ul className="list-disc pl-4">
                 {pokemon.resistances.map(item => (
                   item.multiplier < 1 ?
                     <li
@@ -94,7 +96,7 @@ function Pokemon() {
                 <span className="size-4 rounded-full bg-red-500"></span>
                 <h2 className="uppercase tracking-wide text-2xl font-semibold mb-3">faiblesses</h2>
               </div>
-              <ul>
+              <ul className="list-disc pl-4">
                 {pokemon.resistances.map(item => (
                   item.multiplier > 1 ?
                     <li
@@ -114,8 +116,12 @@ function Pokemon() {
 
         <div className="relative order-1 rounded-full border-4 overflow-hidden border-red-500
                          md:rounded-none md:overflow-auto md:border-none md:w-full md:order-2">
-          <div className="bg-red-500 right size-[320px]
-                          md:w-full md:h-full right">
+          <div className={`bg-gradient-to-t right size-[320px]
+                           md:w-full md:h-full right
+          ${pokemonTypes.some((item) => item.type === pokemon.types[0].name)
+            ? `from-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Primaire"} via-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Secondaire"}`
+            : "bg-blue-700"}`}>
+
           </div>
           <img
             src={pokemon.sprites.regular}
