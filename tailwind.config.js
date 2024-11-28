@@ -78,6 +78,11 @@ export default {
           '2xl': '1300px'
         },
       },
+      screens: {
+        // 'smh': {'raw': '(max-height: 568px)'},
+        'smh': {'raw': '(max-height: 768px)'},
+        'lgh': {'raw': '(max-height: 1024px)'},
+      }
     },
   },
   plugins: [
