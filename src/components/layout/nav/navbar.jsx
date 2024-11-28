@@ -37,7 +37,7 @@ const Navbar = () => {
       </nav>
 
       <div>
-        <a href="/public">
+        <a href="/random">
           <img
             src="https://img.icons8.com/?size=100&id=2908&format=png&color=000000"
             className="size-14"

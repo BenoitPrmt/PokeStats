@@ -9,6 +9,7 @@ import Pokemon from "./pages/Pokemon.jsx";
 import Home from "./pages/Home.jsx";
 import Gen from "./pages/Gen.jsx";
 import Navbar from "./components/layout/nav/navbar.jsx";
+import Random from "./pages/Random.jsx";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     {
         path: "/pokemon/:id",
         element: <Pokemon />,
+    },
+    {
+        path: "/random",
+        element: <Random />,
     },
 ]);
 
