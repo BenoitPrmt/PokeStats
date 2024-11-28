@@ -9,7 +9,8 @@ const NavLinkSm = ({id}) => {
       >
         <img
           src={pokeballLogo}
-          className="size-16"
+          className="smh:size-12
+                     size-16"
           alt={`Icon ${id}`}
         />
         Génération {id + 1}
