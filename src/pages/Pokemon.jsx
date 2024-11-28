@@ -1,17 +1,19 @@
 import {useParams} from "react-router-dom";
 import {getPokemonById} from "../api/pokemons.js";
 import {useEffect, useState} from "react";
-import log from "eslint-plugin-react/lib/util/log.js";
 import pokemonTypes from "../models/pokemonTypes.js";
 
-function Pokemon() {
 
-  const {id} = useParams();
-  const [pokemon, setPokemon] = useState([]);
+// eslint-disable-next-line react/prop-types
+function Pokemon({ id: propId }) {
+  const { id: paramId } = useParams();
+  const id = propId || paramId;
+  const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!id) return;
     const fetchPokemon = async () => {
       setLoading(true);
       setError(null);
