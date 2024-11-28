@@ -9,3 +9,9 @@ export async function getPokemonsByGeneration(generation) {
         .then((res) => res.json())
         .then((data) => data);
 }
+
+export async function getPokemonsByType(type) {
+    return fetch(`https://tyradex.app/api/v1/types/${type}`)
+        .then((res) => res.json())
+        .then((data) => data);
+}

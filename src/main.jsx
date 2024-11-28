@@ -10,6 +10,8 @@ import Home from "./pages/Home.jsx";
 import Gen from "./pages/Gen.jsx";
 import Navbar from "./components/layout/nav/navbar.jsx";
 import Random from "./pages/Random.jsx";
+import Type from "./pages/Type.jsx";
+import Types from "./pages/Types.jsx";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
     {
         path: "/gen/:id",
         element: <Gen />,
+    },
+    {
+        path: "/type/:type",
+        element: <Type />,
+    },
+    {
+        path: "/types",
+        element: <Types />,
     },
     {
         path: "/pokemon/:id",
