@@ -1,11 +1,13 @@
 import pokeballLogo from "../../../assets/images/pokeball.webp";
+import Tooltip from "../tooltip.jsx";
 
 const Nav = ({id}) => {
   return (
-    <li key={id}>
+    <li
+      key={id}
+      className="group relative">
       <a
-        className="cursor-pointer tooltip hover:tooltip-open tooltip-bottom tooltip-gradientR"
-        data-tip={"Génération " + (id + 1)}
+        className="cursor-pointer text-xl"
         href={`/gen/${id + 1}`}
       >
         <img
@@ -14,6 +16,7 @@ const Nav = ({id}) => {
           alt={`Icon ${id}`}
         />
       </a>
+      <Tooltip content={"Génération" + " " + (id + 1)}/>
     </li>
   )
 }
