@@ -10,10 +10,12 @@ function Home() {
       <section className="flex flex-col-reverse lg:flex-row justify-between items-center w-full">
         <div>
           <h1
-            className="hidden lg:block text-center md:text-start bg-gradient-to-r from-gradientB via-gradientR bg-clip-text text-5xl font-semibold
-          text-transparent sm:text-7xl tracking-wide">Pokestats
+            className="hidden text-center text-5xl font-semibold tracking-wide
+                       text-transparent bg-gradient-to-r from-gradientB to-gradientR bg-clip-text
+                       sm:text-7xl md:text-start lg:block">Pokestats
           </h1>
-          <h2 className="text-center md:text-start text-2xl md:text-3xl my-5 tracking-wide">Pokédex intégrant les 9 générations de Pokémon</h2>
+          <h2 className="text-center md:text-start text-2xl md:text-3xl my-5 tracking-wide">Pokédex intégrant les 9
+            générations de Pokémon</h2>
           <h3 className="text-xl md:text-3xl text-center md:text-start">
             By {contributorsModel.map((item, index) => (
             <span

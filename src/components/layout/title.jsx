@@ -4,7 +4,7 @@ const title = ({ content, size }) => {
 
   return (
     <h1
-      className={"md:text-start bg-gradient-to-r from-gradientB via-gradientR bg-clip-text font-semibold text-transparent tracking-wide" + sizeClass}>
+      className={"md:text-start bg-gradient-to-r from-gradientB to-gradientR bg-clip-text font-semibold text-transparent tracking-wide" + sizeClass}>
       {content}
     </h1>
   )
