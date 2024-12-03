@@ -66,10 +66,6 @@ function Pokemon({ id: propId }) {
 
           </div>
 
-          <div className="my-10">
-            <Description/>
-          </div>
-
           <div className="my-10 grid sm:grid-cols-2">
             <Strenght pokemon={pokemon}/>
             <Weakness pokemon={pokemon}/>

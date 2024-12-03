@@ -6,11 +6,15 @@ const PokemonImage = ({pokemon}) => {
     <div className="relative order-1 rounded-full border-4 overflow-hidden border-red-500
                          md:rounded-none md:overflow-auto md:border-none md:w-full md:order-2">
       <div className={`bg-gradient-to-t right size-[320px]
-                           md:w-full md:h-full right
+                           md:w-full md:h-full md:relative
           ${pokemonTypes.some((item) => item.type === pokemon.types[0].name)
         ? `from-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Primaire"} via-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Secondaire"}`
-        : "bg-blue-700"}`}>
+        : ""}`}>
 
+        <span className="hidden
+                         md:absolute md:text-4xl md:tracking-wider md:italic md:opacity-30 md:flex md:bottom-20 md:right-20">
+          N° {pokemon.pokedex_id}
+        </span>
       </div>
       <img
         src={pokemon.sprites.regular}
