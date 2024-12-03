@@ -13,6 +13,9 @@
         background-position: top;
         background-size: cover;
     }
+    .gradient-red{
+        @apply bg-gradient-to-r from-gradientB to-gradientR
+    }
 }
 
 .anim-pokeBall {

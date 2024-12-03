@@ -7,7 +7,8 @@ function Home() {
 
   return (
     <main className="container flex justify-between items-center min-h-[calc(100dvh-144px)]">
-      <section className="flex flex-col-reverse lg:flex-row justify-between items-center w-full">
+      <section className="flex flex-col-reverse justify-between items-center w-full
+                          lg:flex-row">
         <div>
           <h1
             className="hidden text-center text-5xl font-semibold tracking-wide
@@ -34,12 +35,16 @@ function Home() {
 
         <div>
           <h1
-            className="block lg:hidden pb-14 text-center md:text-start bg-gradient-to-r from-gradientB via-gradientR bg-clip-text text-5xl font-semibold
-          text-transparent sm:text-7xl tracking-wide">Pokestats
+            className="block pb-14 text-center tracking-wide gradient-red bg-clip-text text-5xl font-semibold text-transparent
+                       sm:text-7xl
+                       md:text-start
+                       lg:hidden">Pokestats
           </h1>
           <img
-            className="img size-64 sm:size-72 md:size-96 rounded-full shadow-md"
-            alt=""
+            className="img size-64 rounded-full shadow-md
+                       sm:size-72
+                       md:size-96"
+            alt="Pokeball"
           />
         </div>
 
