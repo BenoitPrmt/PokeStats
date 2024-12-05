@@ -14,8 +14,8 @@ import Informations from "../components/details/informations.jsx";
 
 
 // eslint-disable-next-line react/prop-types
-function Pokemon({ id: propId }) {
-  const { id: paramId } = useParams();
+function Pokemon({id: propId}) {
+  const {id: paramId} = useParams();
   const id = propId || paramId;
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -73,7 +73,7 @@ function Pokemon({ id: propId }) {
 
           <div className="grid grid-cols-2 gap-3">
             <Carousel pokemon={pokemon}/>
-            <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catchRate}/>
+            <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catch_rate}/>
           </div>
 
         </div>
