@@ -1,13 +1,10 @@
 import {useParams} from "react-router-dom";
 import {getPokemonById} from "../api/pokemons.js";
 import {useEffect, useState} from "react";
-import pokemonTypes from "../models/pokemonTypes.js";
 import PokemonImage from "../components/details/pokemonImage.jsx";
 import Carousel from "../components/details/carousel.jsx";
-import TitleTertiary from "../components/details/title-tertiary.jsx";
 import Strenght from "../components/details/strenght.jsx";
 import Weakness from "../components/details/weakness.jsx";
-import Description from "../components/details/description.jsx";
 import Types from "../components/details/types.jsx";
 import Name from "../components/details/name.jsx";
 import Informations from "../components/details/informations.jsx";

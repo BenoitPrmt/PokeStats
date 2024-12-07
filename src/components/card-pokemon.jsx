@@ -3,13 +3,13 @@ import pokemonTypes from "../models/pokemonTypes.js";
 const cardPokemon = ({pokemon}) => {
   console.log(pokemon.types[0].name);
   return (
-    <div
+    <article
       key={pokemon.pokedex_id}
       className="text-center shadow relative h-52 rounded-xl group">
       <div
         className={`bg-gradient-to-t opacity-30 absolute h-full w-full rounded-xl
           ${pokemonTypes.some((item) => item.type === pokemon.types[0].name)
-          ? `from-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Primaire"} via-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Secondaire"}`
+          ? `from-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Primaire"} to-${pokemon.types[0].name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "Secondaire"}`
           : "bg-blue-700"}`}>
       </div>
 
@@ -28,7 +28,7 @@ const cardPokemon = ({pokemon}) => {
           <span className="font-medium text-white capitalize">détails</span>
         </a>
       </div>
-    </div>
+    </article>
   );
 }
 export default cardPokemon;

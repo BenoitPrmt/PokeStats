@@ -4,7 +4,7 @@ const title = ({ content, size }) => {
 
   return (
     <h1
-      className={"md:text-start gradient-red bg-clip-text font-semibold text-transparent tracking-wide" + sizeClass}>
+      className={"text-center gradient-red bg-clip-text font-semibold text-transparent tracking-wide" + sizeClass}>
       {content}
     </h1>
   )
