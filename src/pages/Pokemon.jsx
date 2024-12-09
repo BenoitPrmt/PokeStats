@@ -1,21 +1,18 @@
 import {useParams} from "react-router-dom";
 import {getPokemonById} from "../api/pokemons.js";
 import {useEffect, useState} from "react";
-import pokemonTypes from "../models/pokemonTypes.js";
 import PokemonImage from "../components/details/pokemonImage.jsx";
 import Carousel from "../components/details/carousel.jsx";
-import TitleTertiary from "../components/details/title-tertiary.jsx";
 import Strenght from "../components/details/strenght.jsx";
 import Weakness from "../components/details/weakness.jsx";
-import Description from "../components/details/description.jsx";
 import Types from "../components/details/types.jsx";
 import Name from "../components/details/name.jsx";
 import Informations from "../components/details/informations.jsx";
 
 
 // eslint-disable-next-line react/prop-types
-function Pokemon({ id: propId }) {
-  const { id: paramId } = useParams();
+function Pokemon({id: propId}) {
+  const {id: paramId} = useParams();
   const id = propId || paramId;
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -66,10 +63,6 @@ function Pokemon({ id: propId }) {
 
           </div>
 
-          <div className="my-10">
-            <Description/>
-          </div>
-
           <div className="my-10 grid sm:grid-cols-2">
             <Strenght pokemon={pokemon}/>
             <Weakness pokemon={pokemon}/>
@@ -77,7 +70,7 @@ function Pokemon({ id: propId }) {
 
           <div className="grid grid-cols-2 gap-3">
             <Carousel pokemon={pokemon}/>
-            <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catchRate}/>
+            <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catch_rate}/>
           </div>
 
         </div>
