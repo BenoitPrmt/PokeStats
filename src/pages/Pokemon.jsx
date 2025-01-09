@@ -51,7 +51,7 @@ function Pokemon({id: propId}) {
       <div className="grid grid-cols-1 justify-items-center min-h-[calc(100dvh-144px)]
                       md:grid-cols-2">
         <div className="order-2 px-4
-                        md:pl-20 md:order-1">
+                        md:order-1 md:pl-10">
           <div className="flex flex-col items-center gap-10 justify-between
                           lg:flex-row">
 
@@ -68,7 +68,7 @@ function Pokemon({id: propId}) {
             <Weakness pokemon={pokemon}/>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 placeholder">
             <Carousel pokemon={pokemon}/>
             <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catch_rate}/>
           </div>
