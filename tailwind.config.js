@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        custom: ['pokemon', 'sans-serif'],
+      },
       colors: {
         primaryW: "#FDFBFE",
         primaryB: "#5cb9ff",

@@ -12,7 +12,7 @@ function Gen() {
   const [error, setError] = useState(null);
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
 
@@ -80,7 +80,8 @@ function Gen() {
           <h2>Aucun Pokémon trouvé pour cette génération.</h2>
         )}
       </div>
-      <span className="fixed bottom-10 right-4 bg-transparent rounded-full p-2 cursor-pointer shadow-md" onClick={scrollToTop}>
+      <span className="fixed bottom-10 right-4 bg-transparent rounded-full p-2 cursor-pointer shadow-md"
+            onClick={scrollToTop}>
         <svg xmlns="http://www.w3.org/2000/svg"
              className="size-8 text-gradientR"
              viewBox="0 0 24 24">
