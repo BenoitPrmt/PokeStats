@@ -3,12 +3,14 @@ import TitleTertiary from "./title-tertiary.jsx";
 const Carousel = ({pokemon}) => {
     let evolution = [];
 
-    if (pokemon.evolution.pre?.length > 0) {
-        evolution = evolution.concat(pokemon.evolution.pre.flat());
-    }
+    if (pokemon.evolution) {
+        if (pokemon.evolution.pre?.length > 0) {
+            evolution = evolution.concat(pokemon.evolution.pre.flat());
+        }
 
-    if (pokemon.evolution.next?.length > 0) {
-        evolution = evolution.concat(pokemon.evolution.next.flat());
+        if (pokemon.evolution.next?.length > 0) {
+            evolution = evolution.concat(pokemon.evolution.next.flat());
+        }
     }
 
     return (
