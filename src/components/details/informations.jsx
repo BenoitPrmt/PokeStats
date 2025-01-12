@@ -2,7 +2,7 @@ import TitleTertiary from "./title-tertiary.jsx";
 
 const Informations = ({weight, height, catchRate}) => {
   return (
-    <div>
+    <div className="order-1 md:order-2">
       <TitleTertiary content={"informations"} tagColor={"bg-purple-500"}/>
       <ul>
         <li className="capitalize">

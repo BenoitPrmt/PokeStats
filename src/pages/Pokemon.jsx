@@ -68,7 +68,7 @@ function Pokemon({id: propId}) {
             <Weakness pokemon={pokemon}/>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 placeholder">
+          <div className="grid sm:grid-cols-2 gap-3 placeholder sm:mt-20">
             <Carousel pokemon={pokemon}/>
             <Informations weight={pokemon.weight} height={pokemon.height} catchRate={pokemon.catch_rate}/>
           </div>

@@ -19,11 +19,12 @@ function Home() {
             générations de Pokémon</h2>
           <h3 className="text-xl md:text-3xl text-center md:text-start">
             By {contributorsModel.map((item, index) => (
-            <span
+            <a href={item.github}
+              target="_blank"
               key={index}
               className="capitalize font-semibold"
-            >{item.name}
-            </span>
+            >{"@" + item.name}
+            </a>
           )).reduce((prev, curr, idx, arr) => {
             if (idx === arr.length - 1) {
               return [prev, ' & ', curr];
