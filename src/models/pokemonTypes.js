@@ -79,7 +79,7 @@ const pokemonTypes = [
   },
   {
     "id": 14,
-    "type": "Fantôme",
+    "type": "Spectre",
     "primaryColor": "#705898",
     "secondaryColor": "#9E85B7"
   },

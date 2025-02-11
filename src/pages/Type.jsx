@@ -18,6 +18,9 @@ function Type() {
       setError(null);
       try {
         const data = await getPokemonsByType(type);
+
+        if (data.status && data.status !== 200) throw Error;
+
         setPokemons(data.pokemons);
         setTypeData(data);
       } catch (error) {
@@ -32,11 +35,19 @@ function Type() {
   }, [type]);
 
   if (loading) {
-    return <p>Chargement...</p>;
+    return (
+        <div className="flex justify-center items-center">
+          <p>Chargement...</p>
+        </div>
+    );
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+        <div className="flex justify-center items-center">
+          <p>{error}</p>
+        </div>
+    );
   }
 
   return (

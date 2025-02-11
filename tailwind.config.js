@@ -56,8 +56,8 @@ export default {
         rochePrimaire: "#B8A038",
         rocheSecondaire: "#C5A65C",
 
-        fantomePrimaire: "#705898",
-        fantomeSecondaire: "#9E85B7",
+        spectrePrimaire: "#705898",
+        spectreSecondaire: "#9E85B7",
 
         dragonPrimaire: "#7038F8",
         dragonSecondaire: "#8B69F8",
@@ -118,8 +118,8 @@ export default {
     'via-insecteSecondaire',
     'from-rochePrimaire',
     'via-rocheSecondaire',
-    'from-fantomePrimaire',
-    'via-fantomeSecondaire',
+    'from-spectrePrimaire',
+    'via-spectreSecondaire',
     'from-dragonPrimaire',
     'via-dragonSecondaire',
     'from-tenebresPrimaire',
