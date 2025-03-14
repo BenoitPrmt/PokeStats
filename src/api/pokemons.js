@@ -1,7 +1,14 @@
+export async function getAllPokemons() {
+    return fetch("https://tyradex.app/api/v1/pokemon")
+        .then((res) => res.json())
+        .then((data) => data);
+}
+
+
 export async function getPokemonById(pokemonId) {
-  return fetch("https://tyradex.app/api/v1/pokemon/" + pokemonId)
-    .then((res) => res.json())
-    .then((data) => data);
+    return fetch("https://tyradex.app/api/v1/pokemon/" + pokemonId)
+        .then((res) => res.json())
+        .then((data) => data);
 }
 
 export async function getPokemonsByGeneration(generation) {
@@ -15,3 +22,5 @@ export async function getPokemonsByType(type) {
         .then((res) => res.json())
         .then((data) => data);
 }
+
+
