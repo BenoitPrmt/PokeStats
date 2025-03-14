@@ -44,13 +44,27 @@ const router = createBrowserRouter([
         path: "/random",
         element: <Random/>,
     },
-]);
+], {
+    future: {
+        v7_fetcherPersist: true,
+        v7_fetcherPersistKey: "pokestats",
+        v7_normalizeFormMethod: true,
+        v7_partialHydration: true,
+        v7_skipActionErrorRevalidation: true,
+    }
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <NuqsAdapter>
             <Navbar/>
-            <RouterProvider router={router}/>
+            <RouterProvider
+                router={router}
+                future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true,
+                }}
+            />
         </NuqsAdapter>
     </React.StrictMode>
 );
