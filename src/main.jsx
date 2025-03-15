@@ -12,37 +12,59 @@ import Navbar from "./components/layout/nav/navbar.jsx";
 import Random from "./pages/Random.jsx";
 import Type from "./pages/Type.jsx";
 import Types from "./pages/Types.jsx";
+import {NuqsAdapter} from 'nuqs/adapters/react'
+import Pokemons from "./pages/Pokemons.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <Home/>,
     },
     {
         path: "/gen/:id",
-        element: <Gen />,
+        element: <Gen/>,
     },
     {
         path: "/type/:type",
-        element: <Type />,
+        element: <Type/>,
     },
     {
         path: "/types",
-        element: <Types />,
+        element: <Types/>,
     },
     {
         path: "/pokemon/:id",
-        element: <Pokemon />,
+        element: <Pokemon/>,
+    },
+    {
+        path: "/pokemons",
+        element: <Pokemons/>
     },
     {
         path: "/random",
-        element: <Random />,
+        element: <Random/>,
     },
-]);
+], {
+    future: {
+        v7_fetcherPersist: true,
+        v7_fetcherPersistKey: "pokestats",
+        v7_normalizeFormMethod: true,
+        v7_partialHydration: true,
+        v7_skipActionErrorRevalidation: true,
+    }
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <Navbar />
-        <RouterProvider router={router} />
+        <NuqsAdapter>
+            <Navbar/>
+            <RouterProvider
+                router={router}
+                future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true,
+                }}
+            />
+        </NuqsAdapter>
     </React.StrictMode>
 );

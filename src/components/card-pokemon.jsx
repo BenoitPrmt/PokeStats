@@ -1,7 +1,6 @@
 import pokemonTypes from "../models/pokemonTypes.js";
 
 const cardPokemon = ({pokemon}) => {
-  console.log(pokemon.types[0].name);
   return (
     <article
       key={pokemon.pokedex_id}
